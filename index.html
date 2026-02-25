@@ -303,7 +303,7 @@ import app from "./app";
 
 const port = Number(process.env.PORT || 3001);
 app.listen(port, () => {
-  console.log(\`✅ Backend listening on port \${port}\`);
+  console.log(`✅ Backend listening on port ${port}`);
 });
 </code></pre>
   </details>
@@ -386,7 +386,7 @@ import { ENV } from "./env";
 const msalConfig: Configuration = {
   auth: {
     clientId: ENV.AZURE.CLIENT_ID,
-    authority: \`https://login.microsoftonline.com/\${ENV.AZURE.TENANT_ID}\`,
+    authority: `https://login.microsoftonline.com/${ENV.AZURE.TENANT_ID}`,
     clientSecret: ENV.AZURE.CLIENT_SECRET,
   },
   system: { loggerOptions: { loggerCallback: () => {} } },
@@ -734,7 +734,7 @@ export async function uploadPhotoToOneDrive(req: AuthRequest, res: Response) {
   if (!file) return res.status(400).json({ message: "No file" });
   const accessToken = (req.headers["x-graph-token"] as string) || "";
   if (!accessToken) return res.status(400).json({ message: "Missing x-graph-token" });
-  const path = \`StaffPhotos/\${req.user.id}.jpg\`;
+  const path = `StaffPhotos/${req.user.id}.jpg`;
   const uploaded = await uploadToOneDrive(accessToken, path, file.buffer);
   await prisma.staffProfile.update({
     where: { userId: req.user.id },
@@ -846,7 +846,7 @@ import { generateQrPng } from "../utils/qr";
 
 export async function generateCheckinQr(req: AuthRequest, res: Response) {
   if (!req.user) return res.status(401).json({ message: "Unauthorized" });
-  const token = \`ATTEND:\${req.user.id}:\${Date.now()}\`;
+  const token = `ATTEND:${req.user.id}:${Date.now()}`;
   const png = await generateQrPng(token);
   res.setHeader("Content-Type", "image/png");
   res.end(png);
@@ -1824,7 +1824,6 @@ export default function AdminUsers() {
   <hr/>
 
 
-
   <!-- ===========================
        STAFF PROFILE UI
        =========================== -->
@@ -1934,7 +1933,6 @@ export default function Profile() {
   <hr/>
 
 
-
   <!-- ===========================
        ATTENDANCE UI TEMPLATE
        =========================== -->
@@ -2017,9 +2015,7 @@ export default function Attendance() {
 
 
 
-
   <hr/>
-
 
 
   <!-- ===========================
@@ -2095,9 +2091,7 @@ export default function Messages() {
 
 
 
-
   <hr/>
-
 
 
   <!-- ===========================
@@ -3019,7 +3013,7 @@ npx prisma db seed</code></pre>
   </ul>
 
   <p>
-    Your portal is **production-ready** and can be deployed on any cloud provider.
+    Your portal is <strong>production-ready</strong> and can be deployed on any cloud provider.
   </p>
 
 </div>
