@@ -428,7 +428,7 @@ export const logger = winston.createLogger({
 
   <details><summary><strong>File: backend/src/utils/qr.ts</strong></summary>
   <pre><code class="language-ts">import QRCode from "qrcode";
-export async function generateQrPng(data: string): Promise&lt;Buffer&gt; {
+export async function generateQrPng(data: string): Promise<Buffer> {
   return QRCode.toBuffer(data, { type: "png", errorCorrectionLevel: "M" });
 }
 </code></pre>
@@ -1250,23 +1250,23 @@ User 1─────* AuditLog
   <h3>SVG ERD</h3>
   <p>The following inline SVG diagram visualises all relationships.</p>
 
-  <pre><code>&lt;svg width="960" height="520" xmlns="http://www.w3.org/2000/svg"&gt;
-  &lt;rect x="40" y="40" width="200" height="80" fill="#e8f0ff" stroke="#0d2a63"/&gt;
-  &lt;text x="80" y="90" fill="#0d2a63"&gt;User&lt;/text&gt;
+  <pre><code><svg width="960" height="520" xmlns="http://www.w3.org/2000/svg">
+  <rect x="40" y="40" width="200" height="80" fill="#e8f0ff" stroke="#0d2a63"/>
+  <text x="80" y="90" fill="#0d2a63">User</text>
 
-  &lt;rect x="300" y="40" width="200" height="80" fill="#f8fff0" stroke="#0d2a63"/&gt;
-  &lt;text x="330" y="90" fill="#0d2a63"&gt;StaffProfile&lt;/text&gt;
+  <rect x="300" y="40" width="200" height="80" fill="#f8fff0" stroke="#0d2a63"/>
+  <text x="330" y="90" fill="#0d2a63">StaffProfile</text>
 
-  &lt;rect x="560" y="40" width="200" height="80" fill="#fff0f8" stroke="#0d2a63"/&gt;
-  &lt;text x="620" y="90" fill="#0d2a63"&gt;Role&lt;/text&gt;
+  <rect x="560" y="40" width="200" height="80" fill="#fff0f8" stroke="#0d2a63"/>
+  <text x="620" y="90" fill="#0d2a63">Role</text>
 
-  &lt;line x1="240" y1="80" x2="300" y2="80" stroke="#000"/&gt;
-  &lt;line x1="500" y1="80" x2="560" y2="80" stroke="#000"/&gt;
+  <line x1="240" y1="80" x2="300" y2="80" stroke="#000"/>
+  <line x1="500" y1="80" x2="560" y2="80" stroke="#000"/>
 
-  &lt;text x="255" y="70"&gt;1───1&lt;/text&gt;
-  &lt;text x="510" y="70"&gt;*───*&lt;/text&gt;
+  <text x="255" y="70">1───1</text>
+  <text x="510" y="70">*───*</text>
 
-  &lt;/svg&gt;
+  </svg>
 </code></pre>
 
   <h3>🔗 Notes</h3>
@@ -2363,17 +2363,17 @@ export default function LoginScreen({ navigation }) {
   }
 
   return (
-    &lt;View style={{ padding: 40 }}&gt;
-      &lt;Text style={{ fontSize: 24, fontWeight: "bold" }}&gt;
+    <View style={{ padding: 40 }}>
+      <Text style={{ fontSize: 24, fontWeight: "bold" }}>
         Hanave University Staff Portal
-      &lt;/Text&gt;
+      </Text>
 
-      &lt;Button title="Login with Microsoft" onPress={loginWithMicrosoft} /&gt;
+      <Button title="Login with Microsoft" onPress={loginWithMicrosoft} />
 
       {/* Local dev shortcut */}
-      &lt;View style={{ marginTop: 20 }} /&gt;
-      &lt;Button title="Enter Without Login" onPress={continueToDashboard} /&gt;
-    &lt;/View&gt;
+      <View style={{ marginTop: 20 }} />
+      <Button title="Enter Without Login" onPress={continueToDashboard} />
+    </View>
   );
 }
 </code></pre>
@@ -2392,24 +2392,24 @@ export default function LoginScreen({ navigation }) {
 
 export default function DashboardScreen({ navigation }) {
   return (
-    &lt;View style={{ padding: 40 }}&gt;
-      &lt;Text style={{ fontSize: 22 }}&gt;Dashboard&lt;/Text&gt;
+    <View style={{ padding: 40 }}>
+      <Text style={{ fontSize: 22 }}>Dashboard</Text>
 
-      &lt;Button
+      <Button
         title="My Profile"
         onPress={() => navigation.navigate("Profile")}
-      /&gt;
+      />
 
-      &lt;Button
+      <Button
         title="Attendance"
         onPress={() => navigation.navigate("Attendance")}
-      /&gt;
+      />
 
-      &lt;Button
+      <Button
         title="Messages"
         onPress={() => navigation.navigate("Messages")}
-      /&gt;
-    &lt;/View&gt;
+      />
+    </View>
   );
 }
 </code></pre>
@@ -2428,18 +2428,18 @@ export default function DashboardScreen({ navigation }) {
 
 export default function ProfileScreen() {
   return (
-    &lt;View style={{ padding: 40 }}&gt;
-      &lt;Text style={{ fontSize: 20 }}&gt;My Profile&lt;/Text&gt;
+    <View style={{ padding: 40 }}>
+      <Text style={{ fontSize: 20 }}>My Profile</Text>
 
-      &lt;Image
+      <Image
         source={{ uri: "https://placehold.co/120x120" }}
         style={{ width: 120, height: 120, borderRadius: 60, marginTop: 20 }}
-      /&gt;
+      />
 
-      &lt;Text style={{ marginTop: 20 }}&gt;
+      <Text style={{ marginTop: 20 }}>
         Basic profile details appear here (fetched from backend)
-      &lt;/Text&gt;
-    &lt;/View&gt;
+      </Text>
+    </View>
   );
 }
 </code></pre>
@@ -2475,22 +2475,22 @@ export default function AttendanceScreen() {
     setResult("Scanned QR: " + data);
   }
 
-  if (hasPermission === null) return &lt;Text&gt;Requesting permission...&lt;/Text&gt;;
-  if (hasPermission === false) return &lt;Text&gt;Camera access denied.&lt;/Text&gt;;
+  if (hasPermission === null) return <Text>Requesting permission...</Text>;
+  if (hasPermission === false) return <Text>Camera access denied.</Text>;
 
   return (
-    &lt;View style={{ flex: 1 }}&gt;
-      &lt;BarCodeScanner
+    <View style={{ flex: 1 }}>
+      <BarCodeScanner
         onBarCodeScanned={scanned ? undefined : handleScanned}
         style={{ flex: 1 }}
-      /&gt;
+      />
 
       {scanned && (
-        &lt;Button title="Scan Again" onPress={() => setScanned(false)} /&gt;
+        <Button title="Scan Again" onPress={() => setScanned(false)} />
       )}
 
-      &lt;Text style={{ padding: 20 }}&gt;{result}&lt;/Text&gt;
-    &lt;/View&gt;
+      <Text style={{ padding: 20 }}>{result}</Text>
+    </View>
   );
 }
 </code></pre>
@@ -2518,24 +2518,24 @@ export default function MessageScreen() {
   }
 
   return (
-    &lt;ScrollView style={{ padding: 40 }}&gt;
-      &lt;Text style={{ fontSize: 20 }}&gt;Messages&lt;/Text&gt;
+    <ScrollView style={{ padding: 40 }}>
+      <Text style={{ fontSize: 20 }}>Messages</Text>
 
-      &lt;TextInput
+      <TextInput
         placeholder="To (User ID)"
         value={to}
         onChangeText={setTo}
         style={{ background: "#fff", padding: 10, marginBottom: 10 }}
-      /&gt;
+      />
 
-      &lt;TextInput
+      <TextInput
         placeholder="Subject"
         value={subject}
         onChangeText={setSubject}
         style={{ background: "#fff", padding: 10, marginBottom: 10 }}
-      /&gt;
+      />
 
-      &lt;TextInput
+      <TextInput
         placeholder="Message"
         value={body}
         onChangeText={setBody}
@@ -2546,10 +2546,10 @@ export default function MessageScreen() {
           marginBottom: 10,
           height: 120
         }}
-      /&gt;
+      />
 
-      &lt;Button title="Send Message" onPress={sendMessage} /&gt;
-    &lt;/ScrollView&gt;
+      <Button title="Send Message" onPress={sendMessage} />
+    </ScrollView>
   );
 }
 </code></pre>
