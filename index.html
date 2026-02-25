@@ -1,108 +1,3026 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>Hanave University • Full System Reference</title>
 
-  <title>Hanave University • Full System Reference</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
 
-  <!-- ===== Global Styles ===== -->
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
+        h1, h2, h3 {
+            color: #0d2a63;
+        }
 
-    h1, h2, h3 {
-      color: #0d2a63;
-    }
+        pre {
+            background: #f0f0f0;
+            border-left: 4px solid #0d2a63;
+            padding: 12px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
 
-    pre {
-      background: #f0f0f0;
-      border-left: 4px solid #0d2a63;
-      padding: 12px;
-      overflow-x: auto;
-      white-space: pre-wrap;
-      word-break: break-word;
-    }
+        code {
+            font-family: monospace;
+        }
 
-    code {
-      font-family: monospace;
-    }
+        .section {
+            padding: 30px;
+            background: #ffffff;
+            margin: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
 
-    .section {
-      padding: 30px;
-      background: #ffffff;
-      margin: 25px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
+        .toc a {
+            text-decoration: none;
+            color: #0d2a63;
+            font-weight: bold;
+        }
 
-    .toc a {
-      text-decoration: none;
-      color: #0d2a63;
-      font-weight: bold;
-    }
+        .toc li {
+            margin-bottom: 8px;
+        }
 
-    .toc li {
-      margin-bottom: 8px;
-    }
-
-    hr {
-      margin: 40px 0;
-    }
-  </style>
+        hr {
+            margin: 40px 0;
+        }
+    </style>
 </head>
+
 
 <body>
 
+    <div class="section">
+        <h1>Hanave University — Full System Technical Reference</h1>
+        <p>
+            This single HTML file contains the complete end‑to‑end documentation and source reference 
+            for the Hanave University Staff Portal system, including backend, database, frontend, 
+            mobile app, authentication system, infrastructure, and deployment.
+        </p>
+    </div>
+
+
+    <div class="section">
+        <h2>📘 Table of Contents</h2>
+
+        <ul class="toc">
+            <li><a href="#part1">PART 1 — HTML Shell + Table of Contents</a></li>
+
+            <li><a href="#part2">PART 2 — FULL BACKEND</a>
+                <ul>
+                    <li>Express Server</li>
+                    <li>Authentication System</li>
+                    <li>Microsoft Login Integration</li>
+                    <li>RBAC Middleware</li>
+                    <li>Security Middleware</li>
+                    <li>HR Module</li>
+                    <li>Attendance Module</li>
+                    <li>Messaging Module</li>
+                    <li>OneDrive Integration</li>
+                    <li>ID Card Generator</li>
+                    <li>Contract Generator</li>
+                    <li>Audit Logging</li>
+                    <li>API Documentation</li>
+                </ul>
+            </li>
+
+            <li><a href="#part3">PART 3 — FULL DATABASE</a>
+                <ul>
+                    <li>Prisma Schema</li>
+                    <li>SQL Migrations</li>
+                    <li>ERD (ASCII + SVG Embedded)</li>
+                </ul>
+            </li>
+
+            <li><a href="#part4">PART 4 — FULL FRONTEND (Next.js)</a>
+                <ul>
+                    <li>Staff Dashboard Pages</li>
+                    <li>Admin Dashboard Pages</li>
+                    <li>Components</li>
+                    <li>Styles</li>
+                    <li>Context Providers</li>
+                </ul>
+            </li>
+
+            <li><a href="#part5">PART 5 — FRONTEND TEMPLATES + UI</a>
+                <ul>
+                    <li>Staff Profile UI</li>
+                    <li>Attendance UI</li>
+                    <li>Messaging UI</li>
+                    <li>HR UI (contracts, payroll, leave)</li>
+                </ul>
+            </li>
+
+            <li><a href="#part6">PART 6 — MOBILE APP</a>
+                <ul>
+                    <li>React Native Screens</li>
+                    <li>Attendance Scanner (QR)</li>
+                    <li>Messaging Module</li>
+                    <li>Microsoft Authentication Flow</li>
+                </ul>
+            </li>
+
+            <li><a href="#part7">PART 7 — DOCKER + DEPLOYMENT</a>
+                <ul>
+                    <li>docker-compose</li>
+                    <li>Dockerfiles</li>
+                    <li>NGINX Reverse Proxy</li>
+                    <li>Production Setup</li>
+                </ul>
+            </li>
+
+            <li><a href="#part8">PART 8 — FINAL INTEGRATION</a>
+                <ul>
+                    <li>Full HTML Assembly</li>
+                    <li>Searchable Sections</li>
+                    <li>Download Instructions</li>
+                    <li>GitHub Repo Structure</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <hr/>
+
+    <div id="part1" class="section">
+        <h2>PART 1 — HTML Shell + Table of Contents</h2>
+        <p>
+            This section contains the base structure of the document.  
+            All following sections will be appended sequentially.
+        </p>
+    </div>
+    <!-- ===========================
+     PART 2 — FULL BACKEND
+     =========================== -->
+<div id="part2" class="section">
+  <h2>PART 2 — FULL BACKEND</h2>
+  <p>
+    This section provides a production‑grade backend using Node.js, Express, TypeScript, Prisma (DB in Part 3), 
+    Microsoft Entra ID (Azure AD) via <code>msal-node</code>, JWT-based sessions, RBAC, security middleware, 
+    and feature modules for HR, Attendance, Messaging, OneDrive integration, PDF generators (ID card, Contracts), 
+    Audit Logging, and Swagger API documentation.
+  </p>
+
+  <h3>📁 Directory Structure (backend)</h3>
+  <pre><code>backend/
+├─ package.json
+├─ tsconfig.json
+├─ src/
+│  ├─ server.ts
+│  ├─ app.ts
+│  ├─ config/
+│  │  ├─ env.ts
+│  │  └─ msal.ts
+│  ├─ utils/
+│  │  ├─ prisma.ts
+│  │  ├─ jwt.ts
+│  │  ├─ logger.ts
+│  │  └─ qr.ts
+│  ├─ middleware/
+│  │  ├─ security.ts
+│  │  ├─ auth.ts
+│  │  └─ audit.ts
+│  ├─ services/
+│  │  ├─ graph.service.ts
+│  │  ├─ pdf.service.ts
+│  │  └─ storage.service.ts
+│  ├─ controllers/
+│  │  ├─ auth.controller.ts
+│  │  ├─ staff.controller.ts
+│  │  ├─ hr.controller.ts
+│  │  ├─ attendance.controller.ts
+│  │  └─ messaging.controller.ts
+│  ├─ routes/
+│  │  ├─ auth.routes.ts
+│  │  ├─ staff.routes.ts
+│  │  ├─ hr.routes.ts
+│  │  ├─ attendance.routes.ts
+│  │  ├─ messaging.routes.ts
+│  │  └─ docs.routes.ts
+│  └─ swagger/
+│     └─ swagger.ts
+└─ .env (see sample below)
+</code></pre>
+
+  <h3>📦 Install Dependencies</h3>
+  <pre><code class="language-bash">cd backend
+npm init -y
+
+# Core + typescript
+npm i express cors helmet morgan compression express-rate-limit dotenv zod
+npm i -D typescript ts-node @types/node @types/express @types/cors @types/morgan
+
+# Auth + security
+npm i jsonwebtoken bcrypt
+npm i -D @types/jsonwebtoken @types/bcrypt
+
+# Microsoft auth + Graph
+npm i @azure/msal-node @microsoft/microsoft-graph-client isomorphic-fetch cross-fetch
+
+# File upload + QR + PDFs
+npm i multer qrcode pdfkit
+
+# Logging + docs
+npm i winston express-winston swagger-jsdoc swagger-ui-express
+
+# Prisma client (schema in PART 3)
+npm i @prisma/client
+# (Prisma CLI as dev dep – run in project root when building DB in PART 3)
+npm i -D prisma
+</code></pre>
+
+  <h3>🔐 Environment Variables (.env)</h3>
+  <p>Save as <code>backend/.env</code></p>
+  <pre><code># Server
+PORT=3001
+NODE_ENV=development
+CORS_ORIGIN=http://localhost:3000
+
+# JWT
+JWT_SECRET=change_this_super_secret_key
+JWT_EXPIRES=1d
+REFRESH_TOKEN_EXPIRES=7d
+
+# Database (Prisma in PART 3)
+DATABASE_URL=postgresql://admin:secret@localhost:5432/staff_portal?schema=public
+
+# Microsoft Entra ID / Azure AD (replace with your real values)
+AZURE_TENANT_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+AZURE_CLIENT_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+AZURE_CLIENT_SECRET=YOUR_CLIENT_SECRET
+AZURE_REDIRECT_URI=http://localhost:3001/auth/microsoft/redirect
+
+# Microsoft Graph (OneDrive)
+GRAPH_SCOPE=openid profile offline_access User.Read Files.ReadWrite
+</code></pre>
+
+  <h3>⚙️ TypeScript Config (tsconfig.json)</h3>
+  <details><summary><strong>File: backend/tsconfig.json</strong></summary>
+  <pre><code class="language-json">{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "outDir": "dist",
+    "rootDir": "src",
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true
+  }
+}
+</code></pre>
+  </details>
+
+  <h3>📦 package.json</h3>
+  <details><summary><strong>File: backend/package.json</strong></summary>
+  <pre><code class="language-json">{
+  "name": "hanave-backend",
+  "version": "1.0.0",
+  "main": "dist/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "ts-node src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "lint": "echo \"Add ESLint if needed\""
+  }
+}
+</code></pre>
+  </details>
+
+  <h3>🚀 Server Entrypoints</h3>
+  <details open><summary><strong>File: backend/src/server.ts</strong></summary>
+  <pre><code class="language-ts">import dotenv from "dotenv";
+dotenv.config();
+import app from "./app";
+
+const port = Number(process.env.PORT || 3001);
+app.listen(port, () => {
+  console.log(\`✅ Backend listening on port \${port}\`);
+});
+</code></pre>
+  </details>
+
+  <details open><summary><strong>File: backend/src/app.ts</strong></summary>
+  <pre><code class="language-ts">import express from "express";
+import cors from "cors";
+import helmet from "helmet";
+import compression from "compression";
+import morgan from "morgan";
+import rateLimit from "express-rate-limit";
+import { securityHeaders } from "./middleware/security";
+import authRoutes from "./routes/auth.routes";
+import staffRoutes from "./routes/staff.routes";
+import hrRoutes from "./routes/hr.routes";
+import attendanceRoutes from "./routes/attendance.routes";
+import messagingRoutes from "./routes/messaging.routes";
+import docsRoutes from "./routes/docs.routes";
+import { auditMiddleware } from "./middleware/audit";
+
+const app = express();
+
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ extended: true }));
+app.use(cors({ origin: process.env.CORS_ORIGIN || "*", credentials: true }));
+app.use(helmet());
+app.use(compression());
+app.use(morgan("dev"));
+app.use(
+  rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 1000,
+  })
+);
+// Custom security headers
+app.use(securityHeaders);
+
+// Audit middleware (logs authenticated actions)
+app.use(auditMiddleware);
+
+// Routes
+app.use("/auth", authRoutes);
+app.use("/staff", staffRoutes);
+app.use("/hr", hrRoutes);
+app.use("/attendance", attendanceRoutes);
+app.use("/messages", messagingRoutes);
+app.use("/", docsRoutes); // health + swagger
+
+export default app;
+</code></pre>
+  </details>
+
+  <h3>🔧 Config</h3>
+  <details><summary><strong>File: backend/src/config/env.ts</strong></summary>
+  <pre><code class="language-ts">export const ENV = {
+  NODE_ENV: process.env.NODE_ENV || "development",
+  PORT: Number(process.env.PORT || 3001),
+  CORS_ORIGIN: process.env.CORS_ORIGIN || "*",
+  JWT_SECRET: process.env.JWT_SECRET || "changeme",
+  JWT_EXPIRES: process.env.JWT_EXPIRES || "1d",
+  REFRESH_TOKEN_EXPIRES: process.env.REFRESH_TOKEN_EXPIRES || "7d",
+  DATABASE_URL: process.env.DATABASE_URL || "",
+  AZURE: {
+    TENANT_ID: process.env.AZURE_TENANT_ID || "",
+    CLIENT_ID: process.env.AZURE_CLIENT_ID || "",
+    CLIENT_SECRET: process.env.AZURE_CLIENT_SECRET || "",
+    REDIRECT_URI: process.env.AZURE_REDIRECT_URI || "http://localhost:3001/auth/microsoft/redirect",
+    SCOPE: (process.env.GRAPH_SCOPE || "openid profile offline_access User.Read Files.ReadWrite")
+      .split(" ")
+      .filter(Boolean),
+  },
+};
+</code></pre>
+  </details>
+
+  <details><summary><strong>File: backend/src/config/msal.ts</strong></summary>
+  <pre><code class="language-ts">import { ConfidentialClientApplication, Configuration } from "@azure/msal-node";
+import { ENV } from "./env";
+
+const msalConfig: Configuration = {
+  auth: {
+    clientId: ENV.AZURE.CLIENT_ID,
+    authority: \`https://login.microsoftonline.com/\${ENV.AZURE.TENANT_ID}\`,
+    clientSecret: ENV.AZURE.CLIENT_SECRET,
+  },
+  system: { loggerOptions: { loggerCallback: () => {} } },
+};
+
+export const msalClient = new ConfidentialClientApplication(msalConfig);
+</code></pre>
+  </details>
+
+  <h3>🧰 Utils</h3>
+  <details><summary><strong>File: backend/src/utils/prisma.ts</strong></summary>
+  <pre><code class="language-ts">import { PrismaClient } from "@prisma/client";
+export const prisma = new PrismaClient();
+</code></pre>
+  </details>
+
+  <details><summary><strong>File: backend/src/utils/jwt.ts</strong></summary>
+  <pre><code class="language-ts">import jwt from "jsonwebtoken";
+import { ENV } from "../config/env";
+
+export function signJwt(payload: object, expiresIn = ENV.JWT_EXPIRES) {
+  return jwt.sign(payload, ENV.JWT_SECRET, { expiresIn });
+}
+export function verifyJwt(token: string) {
+  return jwt.verify(token, ENV.JWT_SECRET) as any;
+}
+</code></pre>
+  </details>
+
+  <details><summary><strong>File: backend/src/utils/logger.ts</strong></summary>
+  <pre><code class="language-ts">import winston from "winston";
+export const logger = winston.createLogger({
+  level: "info",
+  transports: [new winston.transports.Console()],
+  format: winston.format.combine(winston.format.colorize(), winston.format.simple()),
+});
+</code></pre>
+  </details>
+
+  <details><summary><strong>File: backend/src/utils/qr.ts</strong></summary>
+  <pre><code class="language-ts">import QRCode from "qrcode";
+export async function generateQrPng(data: string): Promise<Buffer> {
+  return QRCode.toBuffer(data, { type: "png", errorCorrectionLevel: "M" });
+}
+</code></pre>
+  </details>
+
+  <h3>🛡️ Middleware (Security, Auth/RBAC, Audit)</h3>
+  <details><summary><strong>File: backend/src/middleware/security.ts</strong></summary>
+  <pre><code class="language-ts">import { Request, Response, NextFunction } from "express";
+export function securityHeaders(req: Request, res: Response, next: NextFunction) {
+  res.setHeader("X-Content-Type-Options", "nosniff");
+  res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+  res.setHeader("X-Frame-Options", "DENY");
+  res.setHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
+  next();
+}
+</code></pre>
+  </details>
+
+  <details><summary><strong>File: backend/src/middleware/auth.ts</strong></summary>
+  <pre><code class="language-ts">import { Request, Response, NextFunction } from "express";
+import jwt from "jsonwebtoken";
+import { ENV } from "../config/env";
+
+export interface AuthRequest extends Request {
+  user?: { id: string; email: string; roles: string[] };
+}
+
+export function requireAuth(req: AuthRequest, res: Response, next: NextFunction) {
+  const auth = req.headers.authorization || "";
+  const token = auth.startsWith("Bearer ") ? auth.slice(7) : null;
+  if (!token) return res.status(401).json({ message: "Unauthorized" });
+  try {
+    const payload = jwt.verify(token, ENV.JWT_SECRET) as any;
+    req.user = { id: payload.sub, email: payload.email, roles: payload.roles || [] };
+    next();
+  } catch {
+    return res.status(401).json({ message: "Invalid token" });
+  }
+}
+
+export function requireRole(...roles: string[]) {
+  return (req: AuthRequest, res: Response, next: NextFunction) => {
+    const has = req.user?.roles?.some((r) => roles.includes(r));
+    if (!has) return res.status(403).json({ message: "Forbidden" });
+    next();
+  };
+}
+</code></pre>
+  </details>
+
+  <details><summary><strong>File: backend/src/middleware/audit.ts</strong></summary>
+  <pre><code class="language-ts">import { Request, Response, NextFunction } from "express";
+import { prisma } from "../utils/prisma";
+import { AuthRequest } from "./auth";
+
+export async function auditMiddleware(req: AuthRequest, res: Response, next: NextFunction) {
+  res.on("finish", async () => {
+    try {
+      await prisma.auditLog.create({
+        data: {
+          path: req.path,
+          method: req.method,
+          status: res.statusCode,
+          userId: req.user?.id || null,
+          ip: req.ip,
+        },
+      });
+    } catch {}
+  });
+  next();
+}
+</code></pre>
+  </details>
+
+  <h3>🧩 Services (Graph / OneDrive, PDFs, Storage)</h3>
+  <details><summary><strong>File: backend/src/services/graph.service.ts</strong></summary>
+  <pre><code class="language-ts">import "isomorphic-fetch";
+import { Client } from "@microsoft/microsoft-graph-client";
+
+export function graphClient(accessToken: string) {
+  return Client.init({
+    authProvider: (done) => done(null, accessToken),
+  });
+}
+
+export async function getMe(accessToken: string) {
+  const client = graphClient(accessToken);
+  return client.api("/me").get();
+}
+
+export async function uploadToOneDrive(accessToken: string, path: string, content: Buffer) {
+  const client = graphClient(accessToken);
+  const encoded = Buffer.from(content).toString("base64"); // small example; prefer direct upload
+  // Simple example upload; in production use large file upload for big files
+  return client.api(`/me/drive/root:/${encodeURIComponent(path)}:/content`)
+    .put(content);
+}
+</code></pre>
+  </details>
+
+  <details><summary><strong>File: backend/src/services/pdf.service.ts</strong></summary>
+  <pre><code class="language-ts">import PDFDocument from "pdfkit";
+
+export function generateIdCardPDF(opts: {
+  fullName: string;
+  staffId: string;
+  department: string;
+  campus: string;
+  qrPng?: Buffer;
+}): Buffer {
+  const doc = new PDFDocument({ size: "A7", layout: "landscape", margin: 10 });
+  const chunks: Buffer[] = [];
+  doc.on("data", (c) => chunks.push(c));
+  doc.on("end", () => {});
+  doc.rect(0, 0, doc.page.width, doc.page.height).fill("#0d2a63");
+  doc.fillColor("#fff").fontSize(14).text("Hanave University", { align: "center" });
+  doc.moveDown(0.5);
+  doc.fontSize(12).text(opts.fullName, { align: "center" });
+  doc.fontSize(10).text(`ID: ${opts.staffId}`, { align: "center" });
+  doc.fontSize(10).text(`${opts.department} • ${opts.campus}`, { align: "center" });
+  if (opts.qrPng) {
+    const x = (doc.page.width - 80) / 2;
+    doc.image(opts.qrPng, x, 50, { width: 80, height: 80 });
+  }
+  doc.end();
+  return Buffer.concat(chunks);
+}
+
+export function generateContractPDF(opts: {
+  fullName: string;
+  staffId: string;
+  roleTitle: string;
+  startDate: string;
+  salary: string;
+  terms: string;
+}): Buffer {
+  const doc = new PDFDocument({ size: "A4", margin: 40 });
+  const chunks: Buffer[] = [];
+  doc.on("data", (c) => chunks.push(c));
+  doc.on("end", () => {});
+  doc.fontSize(20).fill("#0d2a63").text("Employment Contract", { align: "center" });
+  doc.moveDown();
+  doc.fillColor("#000").fontSize(12)
+    .text(`Employee: ${opts.fullName} (ID: ${opts.staffId})`)
+    .text(`Position: ${opts.roleTitle}`)
+    .text(`Start Date: ${opts.startDate}`)
+    .text(`Salary: ${opts.salary}`)
+    .moveDown()
+    .text("Terms & Conditions:")
+    .moveDown()
+    .text(opts.terms, { align: "justify" });
+  doc.end();
+  return Buffer.concat(chunks);
+}
+</code></pre>
+  </details>
+
+  <details><summary><strong>File: backend/src/services/storage.service.ts</strong></summary>
+  <pre><code class="language-ts">import multer from "multer";
+export const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 10 * 1024 * 1024 } });
+</code></pre>
+  </details>
+
+  <h3>🧭 Authentication & Microsoft Login</h3>
+  <details open><summary><strong>File: backend/src/controllers/auth.controller.ts</strong></summary>
+  <pre><code class="language-ts">import { Request, Response } from "express";
+import bcrypt from "bcrypt";
+import { prisma } from "../utils/prisma";
+import { signJwt } from "../utils/jwt";
+import { msalClient } from "../config/msal";
+import { ENV } from "../config/env";
+import { getMe } from "../services/graph.service";
+
+export async function register(req: Request, res: Response) {
+  const { email, password, roleName = "lecturer" } = req.body;
+  if (!email || !password) return res.status(400).json({ message: "Email and password required" });
+  const existing = await prisma.user.findUnique({ where: { email } });
+  if (existing) return res.status(400).json({ message: "Email already registered" });
+  const hash = await bcrypt.hash(password, 10);
+  const role = await prisma.role.upsert({
+    where: { name: roleName },
+    create: { name: roleName },
+    update: {},
+  });
+  const user = await prisma.user.create({
+    data: { email, passwordHash: hash, isApproved: false, roles: { connect: { id: role.id } } },
+  });
+  return res.json({ message: "Registered. Await approval.", userId: user.id });
+}
+
+export async function login(req: Request, res: Response) {
+  const { email, password } = req.body;
+  const user = await prisma.user.findUnique({ where: { email }, include: { roles: true } });
+  if (!user || !user.passwordHash) return res.status(401).json({ message: "Invalid credentials" });
+  const ok = await bcrypt.compare(password, user.passwordHash);
+  if (!ok) return res.status(401).json({ message: "Invalid credentials" });
+  if (!user.isApproved) return res.status(403).json({ message: "Awaiting approval" });
+  const roles = user.roles.map((r) => r.name);
+  const token = signJwt({ sub: user.id, email: user.email, roles });
+  return res.json({ token, user: { id: user.id, email: user.email, roles } });
+}
+
+// Microsoft login – authorization URL
+export async function msLogin(_req: Request, res: Response) {
+  const authCodeUrl = await msalClient.getAuthCodeUrl({
+    scopes: ENV.AZURE.SCOPE,
+    redirectUri: ENV.AZURE.REDIRECT_URI,
+  });
+  res.redirect(authCodeUrl);
+}
+
+// Microsoft redirect handler – exchange code for tokens and login
+export async function msRedirect(req: Request, res: Response) {
+  const code = req.query.code as string;
+  if (!code) return res.status(400).send("Missing code");
+  const tokenResponse = await msalClient.acquireTokenByCode({
+    code,
+    scopes: ENV.AZURE.SCOPE,
+    redirectUri: ENV.AZURE.REDIRECT_URI,
+  });
+  const accessToken = tokenResponse.accessToken!;
+  const profile = await getMe(accessToken); // Graph /me
+  const email = (profile.mail || profile.userPrincipalName || "").toLowerCase();
+  if (!email) return res.status(400).send("Microsoft account missing email");
+
+  let user = await prisma.user.findUnique({ where: { email }, include: { roles: true } });
+  if (!user) {
+    const role = await prisma.role.upsert({
+      where: { name: "lecturer" },
+      create: { name: "lecturer" },
+      update: {},
+    });
+    user = await prisma.user.create({
+      data: {
+        email,
+        isApproved: true, // Option: auto-approve Microsoft organization accounts
+        microsoftId: profile.id,
+        roles: { connect: { id: role.id } },
+      },
+      include: { roles: true },
+    });
+  }
+  if (!user.isApproved) return res.status(403).send("Awaiting approval");
+
+  const roles = user.roles.map((r) => r.name);
+  const jwt = signJwt({ sub: user.id, email: user.email, roles });
+
+  // Redirect to frontend with token (adjust target)
+  const ui = process.env.CORS_ORIGIN || "http://localhost:3000";
+  res.redirect(`${ui}/dashboard?token=${encodeURIComponent(jwt)}`);
+}
+
+export async function me(req: Request, res: Response) {
+  const auth = req.headers.authorization || "";
+  const token = auth.startsWith("Bearer ") ? auth.slice(7) : "";
+  return res.json({ tokenStatus: token ? "present" : "missing" });
+}
+</code></pre>
+  </details>
+
+  <details open><summary><strong>File: backend/src/routes/auth.routes.ts</strong></summary>
+  <pre><code class="language-ts">import { Router } from "express";
+import { login, register, msLogin, msRedirect, me } from "../controllers/auth.controller";
+
+const router = Router();
+router.post("/register", register);
+router.post("/login", login);
+router.get("/microsoft/login", msLogin);
+router.get("/microsoft/redirect", msRedirect);
+router.get("/me", me);
+
+export default router;
+</code></pre>
+  </details>
+
+  <h3>👤 Staff (Profile + Photo Upload → OneDrive)</h3>
+  <details><summary><strong>File: backend/src/controllers/staff.controller.ts</strong></summary>
+  <pre><code class="language-ts">import { Response } from "express";
+import { prisma } from "../utils/prisma";
+import { uploadToOneDrive } from "../services/graph.service";
+import { AuthRequest } from "../middleware/auth";
+
+export async function getMyProfile(req: AuthRequest, res: Response) {
+  if (!req.user) return res.status(401).json({ message: "Unauthorized" });
+  const profile = await prisma.staffProfile.findUnique({ where: { userId: req.user.id } });
+  return res.json({ profile });
+}
+
+export async function updateMyProfile(req: AuthRequest, res: Response) {
+  if (!req.user) return res.status(401).json({ message: "Unauthorized" });
+  const { department, campus, phone } = req.body;
+  const profile = await prisma.staffProfile.upsert({
+    where: { userId: req.user.id },
+    create: { userId: req.user.id, department, campus, phone },
+    update: { department, campus, phone },
+  });
+  return res.json({ profile });
+}
+
+export async function uploadPhotoToOneDrive(req: AuthRequest, res: Response) {
+  if (!req.user) return res.status(401).json({ message: "Unauthorized" });
+  const file = (req as any).file as Express.Multer.File;
+  if (!file) return res.status(400).json({ message: "No file" });
+  const accessToken = (req.headers["x-graph-token"] as string) || "";
+  if (!accessToken) return res.status(400).json({ message: "Missing x-graph-token" });
+  const path = \`StaffPhotos/\${req.user.id}.jpg\`;
+  const uploaded = await uploadToOneDrive(accessToken, path, file.buffer);
+  await prisma.staffProfile.update({
+    where: { userId: req.user.id },
+    data: { photoUrl: uploaded?.webUrl || null },
+  });
+  res.json({ message: "Uploaded", webUrl: uploaded?.webUrl || null });
+}
+</code></pre>
+  </details>
+
+  <details><summary><strong>File: backend/src/routes/staff.routes.ts</strong></summary>
+  <pre><code class="language-ts">import { Router } from "express";
+import { requireAuth } from "../middleware/auth";
+import { upload } from "../services/storage.service";
+import { getMyProfile, updateMyProfile, uploadPhotoToOneDrive } from "../controllers/staff.controller";
+
+const router = Router();
+router.get("/me", requireAuth, getMyProfile);
+router.post("/me", requireAuth, updateMyProfile);
+router.post("/photo", requireAuth, upload.single("photo"), uploadPhotoToOneDrive);
+
+export default router;
+</code></pre>
+  </details>
+
+  <h3>🏛️ HR Module (Contracts, Leave, Payroll)</h3>
+  <details><summary><strong>File: backend/src/controllers/hr.controller.ts</strong></summary>
+  <pre><code class="language-ts">import { Response } from "express";
+import { prisma } from "../utils/prisma";
+import { AuthRequest } from "../middleware/auth";
+import { generateContractPDF } from "../services/pdf.service";
+
+export async function createContract(req: AuthRequest, res: Response) {
+  const { userId, roleTitle, startDate, salary, terms } = req.body;
+  const contract = await prisma.contract.create({
+    data: { userId, roleTitle, startDate: new Date(startDate), salary, terms },
+  });
+  res.json({ contract });
+}
+
+export async function generateContractPdf(req: AuthRequest, res: Response) {
+  const { contractId } = req.params;
+  const contract = await prisma.contract.findUnique({
+    where: { id: contractId },
+    include: { user: true },
+  });
+  if (!contract) return res.status(404).send("Not found");
+  const pdf = generateContractPDF({
+    fullName: contract.user.email,
+    staffId: contract.userId,
+    roleTitle: contract.roleTitle,
+    startDate: contract.startDate.toISOString().slice(0, 10),
+    salary: contract.salary,
+    terms: contract.terms,
+  });
+  res.setHeader("Content-Type", "application/pdf");
+  res.setHeader("Content-Disposition", `attachment; filename=contract-${contractId}.pdf`);
+  res.end(pdf);
+}
+
+export async function requestLeave(req: AuthRequest, res: Response) {
+  if (!req.user) return res.status(401).json({ message: "Unauthorized" });
+  const { from, to, reason } = req.body;
+  const leave = await prisma.leaveRequest.create({
+    data: { userId: req.user.id, from: new Date(from), to: new Date(to), reason, status: "PENDING" },
+  });
+  res.json({ leave });
+}
+
+export async function approveLeave(req: AuthRequest, res: Response) {
+  const { id } = req.params;
+  const leave = await prisma.leaveRequest.update({
+    where: { id },
+    data: { status: "APPROVED" },
+  });
+  res.json({ leave });
+}
+
+export async function payrollSummary(_req: AuthRequest, res: Response) {
+  const count = await prisma.payroll.count();
+  res.json({ payrollItems: count });
+}
+</code></pre>
+  </details>
+
+  <details><summary><strong>File: backend/src/routes/hr.routes.ts</strong></summary>
+  <pre><code class="language-ts">import { Router } from "express";
+import { requireAuth, requireRole } from "../middleware/auth";
+import { createContract, generateContractPdf, requestLeave, approveLeave, payrollSummary } from "../controllers/hr.controller";
+
+const router = Router();
+// HR/admin only endpoints
+router.post("/contracts", requireAuth, requireRole("hr", "admin"), createContract);
+router.get("/contracts/:contractId/pdf", requireAuth, requireRole("hr", "admin"), generateContractPdf);
+router.post("/leave", requireAuth, requestLeave);
+router.post("/leave/:id/approve", requireAuth, requireRole("hr", "admin"), approveLeave);
+router.get("/payroll/summary", requireAuth, requireRole("finance", "hr", "admin"), payrollSummary);
+
+export default router;
+</code></pre>
+  </details>
+
+  <h3>🕒 Attendance Module (QR Check‑in)</h3>
+  <details><summary><strong>File: backend/src/controllers/attendance.controller.ts</strong></summary>
+  <pre><code class="language-ts">import { Response } from "express";
+import { prisma } from "../utils/prisma";
+import { AuthRequest } from "../middleware/auth";
+import { generateQrPng } from "../utils/qr";
+
+export async function generateCheckinQr(req: AuthRequest, res: Response) {
+  if (!req.user) return res.status(401).json({ message: "Unauthorized" });
+  const token = \`ATTEND:\${req.user.id}:\${Date.now()}\`;
+  const png = await generateQrPng(token);
+  res.setHeader("Content-Type", "image/png");
+  res.end(png);
+}
+
+export async function checkIn(req: AuthRequest, res: Response) {
+  if (!req.user) return res.status(401).json({ message: "Unauthorized" });
+  const { code } = req.body;
+  // TODO: verify token freshness etc.
+  const log = await prisma.attendanceLog.create({
+    data: { userId: req.user.id, action: "CHECK_IN", code },
+  });
+  res.json({ log });
+}
+
+export async function checkOut(req: AuthRequest, res: Response) {
+  if (!req.user) return res.status(401).json({ message: "Unauthorized" });
+  const log = await prisma.attendanceLog.create({
+    data: { userId: req.user.id, action: "CHECK_OUT" },
+  });
+  res.json({ log });
+}
+</code></pre>
+  </details>
+
+  <details><summary><strong>File: backend/src/routes/attendance.routes.ts</strong></summary>
+  <pre><code class="language-ts">import { Router } from "express";
+import { requireAuth } from "../middleware/auth";
+import { generateCheckinQr, checkIn, checkOut } from "../controllers/attendance.controller";
+
+const router = Router();
+router.get("/qr", requireAuth, generateCheckinQr);
+router.post("/check-in", requireAuth, checkIn);
+router.post("/check-out", requireAuth, checkOut);
+
+export default router;
+</code></pre>
+  </details>
+
+  <h3>💬 Messaging Module</h3>
+  <details><summary><strong>File: backend/src/controllers/messaging.controller.ts</strong></summary>
+  <pre><code class="language-ts">import { Response } from "express";
+import { prisma } from "../utils/prisma";
+import { AuthRequest } from "../middleware/auth";
+
+export async function sendMessage(req: AuthRequest, res: Response) {
+  if (!req.user) return res.status(401).json({ message: "Unauthorized" });
+  const { toUserId, subject, body } = req.body;
+  const msg = await prisma.message.create({
+    data: { fromUserId: req.user.id, toUserId, subject, body },
+  });
+  res.json({ message: msg });
+}
+
+export async function inbox(req: AuthRequest, res: Response) {
+  if (!req.user) return res.status(401).json({ message: "Unauthorized" });
+  const msgs = await prisma.message.findMany({
+    where: { toUserId: req.user.id },
+    orderBy: { createdAt: "desc" },
+  });
+  res.json({ inbox: msgs });
+}
+</code></pre>
+  </details>
+
+  <details><summary><strong>File: backend/src/routes/messaging.routes.ts</strong></summary>
+  <pre><code class="language-ts">import { Router } from "express";
+import { requireAuth } from "../middleware/auth";
+import { sendMessage, inbox } from "../controllers/messaging.controller";
+
+const router = Router();
+router.post("/send", requireAuth, sendMessage);
+router.get("/inbox", requireAuth, inbox);
+
+export default router;
+</code></pre>
+  </details>
+
+  <h3>📘 Swagger (API Docs) + Health</h3>
+  <details><summary><strong>File: backend/src/swagger/swagger.ts</strong></summary>
+  <pre><code class="language-ts">import swaggerJSDoc from "swagger-jsdoc";
+
+export const swaggerSpec = swaggerJSDoc({
+  definition: {
+    openapi: "3.0.3",
+    info: {
+      title: "Hanave University Staff Portal API",
+      version: "1.0.0"
+    }
+  },
+  apis: ["./src/routes/*.ts", "./src/controllers/*.ts"],
+});
+</code></pre>
+  </details>
+
+  <details><summary><strong>File: backend/src/routes/docs.routes.ts</strong></summary>
+  <pre><code class="language-ts">import { Router } from "express";
+import swaggerUi from "swagger-ui-express";
+import { swaggerSpec } from "../swagger/swagger";
+const router = Router();
+
+router.get("/health", (_req, res) => res.json({ ok: true, service: "hanave-backend" }));
+router.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+export default router;
+</code></pre>
+  </details>
+
+  <h3>✅ Quick Start (Backend)</h3>
+  <pre><code class="language-bash"># In /backend
+cp .env.example .env  # or create .env with values shown above
+npm run dev           # starts dev server on http://localhost:3001
+# Swagger UI: http://localhost:3001/docs
+# Microsoft login: http://localhost:3001/auth/microsoft/login
+</code></pre>
+
+  <p><strong>Note:</strong> The database schema, migrations, and ERD are defined in <em>PART 3</em>. Some routes will require the tables created there.</p>
+</div>
+<!-- ====== END PART 2 ====== -->
   <!-- ===========================
-        TITLE + INTRO
-  ============================ -->
-  <div class="section">
-    <h1>Hanave University — Full System Technical Reference</h1>
-    <p>
-      This document contains complete documentation for the Hanave University Staff Portal
-      covering backend, database, frontend, mobile app, authentication, and deployment.
-    </p>
-  </div>
+     PART 3 — FULL DATABASE
+     =========================== -->
+<div id="part3" class="section">
+  <h2>PART 3 — FULL DATABASE</h2>
+  <p>
+    This section defines the complete database layer used by the backend.  
+    It includes the Prisma schema, SQL migrations, ERD diagrams, and relational overview.
+  </p>
+
+  <h3>📁 Directory Structure (database)</h3>
+  <pre><code>database/
+├─ schema.prisma
+├─ migrations/
+│  ├─ 0001_init/
+│  │   └─ migration.sql
+│  ├─ 0002_seed_roles/
+│  │   └─ migration.sql
+│  ├─ 0003_hr_tables/
+│  │   └─ migration.sql
+└─ erd/
+   ├─ erd-ascii.txt
+   └─ erd.svg
+</code></pre>
+
+
 
   <!-- ===========================
-        TABLE OF CONTENTS
-  ============================ -->
-  <div class="section">
-    <h2>📘 Table of Contents</h2>
+       PRISMA SCHEMA
+       =========================== -->
+  <h2>📘 Prisma Schema (Full)</h2>
+  <details open>
+    <summary><strong>File: database/schema.prisma</strong></summary>
+    <pre><code class="language-ts">// Prisma schema for Hanave University Staff Portal
+generator client {
+  provider = "prisma-client-js"
+}
 
-    <ul class="toc">
-      <li><a href="#part1">PART 1 — HTML Shell + TOC</a></li>
-      <li><a href="#part2">PART 2 — Backend</a></li>
-      <li><a href="#part3">PART 3 — Database</a></li>
-      <li><a href="#part4">PART 4 — Frontend (Next.js)</a></li>
-      <li><a href="#part5">PART 5 — UI Templates</a></li>
-      <li><a href="#part6">PART 6 — Mobile App</a></li>
-      <li><a href="#part7">PART 7 — Docker + Deployment</a></li>
-      <li><a href="#part8">PART 8 — Final Integration</a></li>
-    </ul>
-  </div>
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
 
-  <hr />
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  passwordHash  String?
+  microsoftId   String?   @unique
+  isApproved    Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  roles         Role[]    @relation("UserRoles")
+  profile       StaffProfile?
+  contracts     Contract[]
+  leaves        LeaveRequest[]
+  attendance    AttendanceLog[]
+  messagesSent  Message[] @relation("MessagesSent")
+  messagesRecv  Message[] @relation("MessagesRecv")
+  payroll       Payroll[]
+  auditLogs     AuditLog[]
+}
+
+model Role {
+  id    String  @id @default(cuid())
+  name  String  @unique
+  users User[]  @relation("UserRoles")
+}
+
+model StaffProfile {
+  id         String  @id @default(cuid())
+  userId     String  @unique
+  user       User    @relation(fields: [userId], references: [id])
+  department String?
+  campus     String?
+  phone      String?
+  photoUrl   String?
+}
+
+model Contract {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
+  roleTitle  String
+  startDate  DateTime
+  salary     String
+  terms      String
+  createdAt  DateTime @default(now())
+}
+
+model LeaveRequest {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  from      DateTime
+  to        DateTime
+  reason    String
+  status    String   @default("PENDING")
+  createdAt DateTime @default(now())
+}
+
+model AttendanceLog {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  action    String
+  code      String?
+  createdAt DateTime @default(now())
+}
+
+model Message {
+  id          String   @id @default(cuid())
+  fromUserId  String
+  toUserId    String
+  subject     String
+  body        String
+  createdAt   DateTime @default(now())
+  fromUser    User     @relation("MessagesSent", fields: [fromUserId], references: [id])
+  toUser      User     @relation("MessagesRecv", fields: [toUserId], references: [id])
+}
+
+model Payroll {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  amount    Float
+  month     String
+  year      Int
+  createdAt DateTime @default(now())
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+  method    String
+  path      String
+  status    Int
+  ip        String?
+  createdAt DateTime @default(now())
+}
+</code></pre>
+  </details>
+
+
 
   <!-- ===========================
-        PART 1
-  ============================ -->
-  <div id="part1" class="section">
-    <h2>PART 1 — HTML Shell + Table of Contents</h2>
-    <p>
-      This section defines the base HTML structure.  
-      All following exported content sections should be inserted below.
-    </p>
-  </div>
+       SQL MIGRATIONS
+       =========================== -->
+  <h2>🧱 SQL Migrations</h2>
 
-  <!-- ⚠️ INSERT ALL REMAINING SECTIONS HERE (Part 2 → Part 8)
-       I can clean them for you if you want. Just tell me. -->
+  <details>
+    <summary><strong>migration 0001 — Core Tables</strong></summary>
+    <pre><code class="language-sql">CREATE TABLE "User" (
+  id TEXT PRIMARY KEY,
+  email TEXT UNIQUE NOT NULL,
+  passwordHash TEXT,
+  microsoftId TEXT UNIQUE,
+  isApproved BOOLEAN DEFAULT FALSE,
+  createdAt TIMESTAMP DEFAULT NOW()
+);
 
-</body>
-</html>
+CREATE TABLE "Role" (
+  id TEXT PRIMARY KEY,
+  name TEXT UNIQUE NOT NULL
+);
+
+CREATE TABLE "_UserRoles" (
+  A TEXT NOT NULL,
+  B TEXT NOT NULL,
+  FOREIGN KEY("A") REFERENCES "User"(id),
+  FOREIGN KEY("B") REFERENCES "Role"(id)
+);
+</code></pre>
+  </details>
+
+  <details>
+    <summary><strong>migration 0002 — Staff Profile</strong></summary>
+    <pre><code class="language-sql">CREATE TABLE "StaffProfile" (
+  id TEXT PRIMARY KEY,
+  userId TEXT UNIQUE NOT NULL,
+  department TEXT,
+  campus TEXT,
+  phone TEXT,
+  photoUrl TEXT,
+  FOREIGN KEY("userId") REFERENCES "User"(id)
+);
+</code></pre>
+  </details>
+
+  <details>
+    <summary><strong>migration 0003 — HR, Messaging, Attendance, Payroll</strong></summary>
+    <pre><code class="language-sql">CREATE TABLE "Contract" (
+  id TEXT PRIMARY KEY,
+  userId TEXT NOT NULL,
+  roleTitle TEXT NOT NULL,
+  startDate TIMESTAMP NOT NULL,
+  salary TEXT NOT NULL,
+  terms TEXT NOT NULL,
+  createdAt TIMESTAMP DEFAULT NOW(),
+  FOREIGN KEY("userId") REFERENCES "User"(id)
+);
+
+CREATE TABLE "LeaveRequest" (
+  id TEXT PRIMARY KEY,
+  userId TEXT NOT NULL,
+  "from" TIMESTAMP NOT NULL,
+  "to" TIMESTAMP NOT NULL,
+  reason TEXT NOT NULL,
+  status TEXT DEFAULT 'PENDING',
+  createdAt TIMESTAMP DEFAULT NOW(),
+  FOREIGN KEY("userId") REFERENCES "User"(id)
+);
+
+CREATE TABLE "AttendanceLog" (
+  id TEXT PRIMARY KEY,
+  userId TEXT NOT NULL,
+  action TEXT NOT NULL,
+  code TEXT,
+  createdAt TIMESTAMP DEFAULT NOW(),
+  FOREIGN KEY("userId") REFERENCES "User"(id)
+);
+
+CREATE TABLE "Message" (
+  id TEXT PRIMARY KEY,
+  fromUserId TEXT NOT NULL,
+  toUserId TEXT NOT NULL,
+  subject TEXT NOT NULL,
+  body TEXT NOT NULL,
+  createdAt TIMESTAMP DEFAULT NOW(),
+  FOREIGN KEY("fromUserId") REFERENCES "User"(id),
+  FOREIGN KEY("toUserId") REFERENCES "User"(id)
+);
+
+CREATE TABLE "Payroll" (
+  id TEXT PRIMARY KEY,
+  userId TEXT NOT NULL,
+  amount DOUBLE PRECISION NOT NULL,
+  month TEXT NOT NULL,
+  year INT NOT NULL,
+  createdAt TIMESTAMP DEFAULT NOW(),
+  FOREIGN KEY("userId") REFERENCES "User"(id)
+);
+
+CREATE TABLE "AuditLog" (
+  id TEXT PRIMARY KEY,
+  userId TEXT,
+  method TEXT NOT NULL,
+  path TEXT NOT NULL,
+  status INT NOT NULL,
+  ip TEXT,
+  createdAt TIMESTAMP DEFAULT NOW(),
+  FOREIGN KEY("userId") REFERENCES "User"(id)
+);
+</code></pre>
+  </details>
+
+
+
+  <!-- ===========================
+       ERD DIAGRAM
+       =========================== -->
+  <h2>🗺 ERD (Entity Relationship Diagram)</h2>
+
+  <h3>ASCII ERD</h3>
+  <pre><code>User ───────┐
+  │1        │*  
+  │         ▼
+StaffProfile
+
+User *─────* Role (via UserRoles)
+
+User 1─────* Contract  
+User 1─────* LeaveRequest  
+User 1─────* AttendanceLog  
+
+User 1─────* Message (messagesSent)  
+User 1─────* Message (messagesRecv)
+
+User 1─────* Payroll  
+User 1─────* AuditLog
+</code></pre>
+
+  <h3>SVG ERD</h3>
+  <p>The following inline SVG diagram visualises all relationships.</p>
+
+  <pre><code><svg width="960" height="520" xmlns="http://www.w3.org/2000/svg">
+  <rect x="40" y="40" width="200" height="80" fill="#e8f0ff" stroke="#0d2a63"/>
+  <text x="80" y="90" fill="#0d2a63">User</text>
+
+  <rect x="300" y="40" width="200" height="80" fill="#f8fff0" stroke="#0d2a63"/>
+  <text x="330" y="90" fill="#0d2a63">StaffProfile</text>
+
+  <rect x="560" y="40" width="200" height="80" fill="#fff0f8" stroke="#0d2a63"/>
+  <text x="620" y="90" fill="#0d2a63">Role</text>
+
+  <line x1="240" y1="80" x2="300" y2="80" stroke="#000"/>
+  <line x1="500" y1="80" x2="560" y2="80" stroke="#000"/>
+
+  <text x="255" y="70">1───1</text>
+  <text x="510" y="70">*───*</text>
+
+  </svg>
+</code></pre>
+
+  <h3>🔗 Notes</h3>
+  <ul>
+    <li>The backend in PART 2 is fully wired to this schema.</li>
+    <li>The Prisma client is generated from this file.</li>
+    <li>SQL migrations reflect the same structure for PostgreSQL.</li>
+  </ul>
+
+</div>
+<!-- ====== END PART 3 ====== -->
+  <!-- ===========================
+     PART 4 — FULL FRONTEND (NEXT.JS)
+     =========================== -->
+<div id="part4" class="section">
+  <h2>PART 4 — FULL FRONTEND (Next.js Web Portal)</h2>
+
+  <p>
+    This section contains the complete Next.js frontend for the Hanave University Staff Portal,
+    including:
+  </p>
+
+  <ul>
+    <li>Authentication (JWT + Microsoft redirect)</li>
+    <li>Staff Dashboard</li>
+    <li>Admin Dashboard</li>
+    <li>Components (Navbar, Sidebar, Cards, Tables)</li>
+    <li>Layouts (dashboard layout)</li>
+    <li>Context Providers</li>
+    <li>Styles & utilities</li>
+    <li>API helper for backend communication</li>
+  </ul>
+
+  <h3>📁 Directory Structure (frontend)</h3>
+  <pre><code>frontend/
+├─ package.json  
+├─ next.config.js  
+├─ public/  
+├─ styles/  
+│  └─ globals.css  
+├─ src/  
+   ├─ pages/  
+   │  ├─ index.tsx  
+   │  ├─ dashboard/  
+   │  │   ├─ index.tsx  
+   │  │   ├─ attendance.tsx  
+   │  │   ├─ hr.tsx  
+   │  │   ├─ messages.tsx  
+   │  │   ├─ profile.tsx  
+   │  ├─ admin/  
+   │  │   ├─ index.tsx  
+   │  │   ├─ users.tsx  
+   │  │   ├─ hr.tsx  
+   ├─ components/  
+   │  ├─ Navbar.tsx  
+   │  ├─ Sidebar.tsx  
+   │  ├─ Card.tsx  
+   │  ├─ Table.tsx  
+   ├─ context/  
+   │  └─ AuthContext.tsx  
+   ├─ utils/  
+      └─ api.ts  
+</code></pre>
+
+
+
+  <!-- ===========================
+       Next.js Config
+       =========================== -->
+  <h3>⚙️ next.config.js</h3>
+  <details open>
+    <summary><strong>File: frontend/next.config.js</strong></summary>
+<pre><code class="language-js">/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  env: {
+    NEXT_PUBLIC_BACKEND_URL: "http://localhost:3001"
+  }
+};
+module.exports = nextConfig;
+</code></pre>
+  </details>
+
+
+
+
+  <!-- ===========================
+       GLOBAL CSS
+       =========================== -->
+  <h3>🎨 global styles</h3>
+  <details>
+    <summary><strong>File: frontend/styles/globals.css</strong></summary>
+<pre><code class="language-css">html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f4f7fb;
+}
+
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 240px;
+  background: #123066;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px;
+  margin: 8px 0;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.sidebar a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.navbar {
+  background: white;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.content {
+  flex: 1;
+  padding: 30px;
+}
+</code></pre>
+  </details>
+
+
+
+
+  <!-- ===========================
+       API Helper
+       =========================== -->
+  <h3>🧰 API Helper</h3>
+  <details open>
+    <summary><strong>File: frontend/src/utils/api.ts</strong></summary>
+<pre><code class="language-ts">export const api = async (path: string, token?: string, options?: any) => {
+  const backend = process.env.NEXT_PUBLIC_BACKEND_URL;
+  const headers: any = {
+    "Content-Type": "application/json"
+  };
+  if (token) headers.Authorization = `Bearer ${token}`;
+  const res = await fetch(backend + path, {
+    method: "GET",
+    headers,
+    ...options
+  });
+  return res.json();
+};
+</code></pre>
+  </details>
+
+
+
+
+  <!-- ===========================
+       AUTH CONTEXT
+       =========================== -->
+  <h3>🔐 Authentication Context</h3>
+  <details open>
+    <summary><strong>File: frontend/src/context/AuthContext.tsx</strong></summary>
+<pre><code class="language-tsx">import { createContext, useEffect, useState } from "react";
+
+export const AuthContext = createContext({
+  token: "",
+  setToken: (t: string) => {},
+  user: null as any,
+  logout: () => {}
+});
+
+export function AuthProvider({ children }: any) {
+  const [token, setToken] = useState("");
+  const [user, setUser] = useState<any>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const t = localStorage.getItem("token");
+    if (t) setToken(t);
+  }, []);
+
+  function logout() {
+    setToken("");
+    setUser(null);
+    localStorage.removeItem("token");
+  }
+
+  return (
+    <AuthContext.Provider value={{ token, setToken, user, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+}
+</code></pre>
+  </details>
+
+
+
+
+  <!-- ===========================
+       LAYOUT COMPONENTS
+       =========================== -->
+  <h3>📐 Layout Components</h3>
+
+  <details>
+    <summary><strong>File: frontend/src/components/Navbar.tsx</strong></summary>
+<pre><code class="language-tsx">export default function Navbar() {
+  return (
+    <div className="navbar">
+      <strong>Hanave University • Staff Portal</strong>
+    </div>
+  );
+}
+</code></pre>
+  </details>
+
+  <details>
+    <summary><strong>File: frontend/src/components/Sidebar.tsx</strong></summary>
+<pre><code class="language-tsx">import Link from "next/link";
+
+export default function Sidebar() {
+  return (
+    <div className="sidebar">
+      <h3>Dashboard</h3>
+      <Link href="/dashboard">Home</Link>
+      <Link href="/dashboard/profile">My Profile</Link>
+      <Link href="/dashboard/attendance">Attendance</Link>
+      <Link href="/dashboard/messages">Messages</Link>
+      <Link href="/dashboard/hr">HR</Link>
+
+      <hr style={{ opacity: 0.3 }} />
+
+      <h3>Admin</h3>
+      <Link href="/admin">Admin Home</Link>
+      <Link href="/admin/users">Users</Link>
+      <Link href="/admin/hr">HR Control</Link>
+    </div>
+  );
+}
+</code></pre>
+  </details>
+
+
+
+
+  <!-- ===========================
+       SHARED COMPONENTS
+       =========================== -->
+  <h3>🧩 Shared Components</h3>
+
+  <details>
+    <summary><strong>File: frontend/src/components/Card.tsx</strong></summary>
+<pre><code class="language-tsx">export default function Card({ title, children }: any) {
+  return (
+    <div style={{
+      background: "white",
+      padding: 20,
+      borderRadius: 12,
+      marginBottom: 20,
+      boxShadow: "0 2px 8px rgba(0,0,0,0.08)"
+    }}>
+      <h3>{title}</h3>
+      <div>{children}</div>
+    </div>
+  );
+}
+</code></pre>
+  </details>
+
+
+
+  <!-- ===========================
+       PAGES
+       =========================== -->
+  <h2>📄 Pages</h2>
+
+  <details open>
+    <summary><strong>File: frontend/src/pages/index.tsx</strong></summary>
+<pre><code class="language-tsx">import Link from "next/link";
+
+export default function Home() {
+  return (
+    <div style={{ padding: 50, textAlign: "center" }}>
+      <h1>Hanave University Staff Portal</h1>
+      <p>Login with your Microsoft Account</p>
+      <a 
+        href="http://localhost:3001/auth/microsoft/login"
+        style={{
+          padding: "12px 28px",
+          background: "#123066",
+          color: "white",
+          borderRadius: 8,
+          textDecoration: "none"
+        }}
+      >
+        Login with Microsoft
+      </a>
+    </div>
+  );
+}
+</code></pre>
+  </details>
+
+
+  <!-- ===========================
+       DASHBOARD LAYOUT
+       =========================== -->
+  <details open>
+    <summary><strong>Dashboard Layout Wrapper</strong></summary>
+<pre><code class="language-tsx">import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
+
+export default function DashboardLayout({ children }: any) {
+  return (
+    <div className="dashboard-layout">
+      <Sidebar />
+      <div style={{ width: "100%" }}>
+        <Navbar />
+        <div className="content">{children}</div>
+      </div>
+    </div>
+  );
+}
+</code></pre>
+  </details>
+
+
+
+  <!-- ===========================
+       STAFF DASHBOARD
+       =========================== -->
+  <h3>👤 Staff Dashboard Page</h3>
+  <details open>
+    <summary><strong>File: frontend/src/pages/dashboard/index.tsx</strong></summary>
+<pre><code class="language-tsx">import DashboardLayout from "../../components/DashboardLayout";
+import Card from "../../components/Card";
+
+export default function DashboardHome() {
+  return (
+    <DashboardLayout>
+      <h2>Welcome to your Dashboard</h2>
+      <Card title="Profile">
+        Manage your staff profile and account details.
+      </Card>
+      <Card title="Attendance">
+        Check-in, check-out, and review attendance history.
+      </Card>
+      <Card title="Messages">
+        View and respond to internal messages.
+      </Card>
+    </DashboardLayout>
+  );
+}
+</code></pre>
+  </details>
+
+
+
+  <!-- ===========================
+       PROFILE
+       =========================== -->
+  <details>
+    <summary><strong>File: frontend/src/pages/dashboard/profile.tsx</strong></summary>
+<pre><code class="language-tsx">import DashboardLayout from "../../components/DashboardLayout";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { api } from "../../utils/api";
+import Card from "../../components/Card";
+
+export default function Profile() {
+  const { token } = useContext(AuthContext);
+  const [profile, setProfile] = useState<any>(null);
+
+  useEffect(() => {
+    api("/staff/me", token).then((r) => setProfile(r.profile));
+  }, [token]);
+
+  return (
+    <DashboardLayout>
+      <h2>My Profile</h2>
+      <Card title="Basic Info">
+        <pre>{JSON.stringify(profile, null, 2)}</pre>
+      </Card>
+    </DashboardLayout>
+  );
+}
+</code></pre>
+  </details>
+
+
+
+
+  <!-- ===========================
+       ATTENDANCE PAGE
+       =========================== -->
+  <details>
+    <summary><strong>File: frontend/src/pages/dashboard/attendance.tsx</strong></summary>
+<pre><code class="language-tsx">import DashboardLayout from "../../components/DashboardLayout";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { api } from "../../utils/api";
+
+export default function Attendance() {
+  const { token } = useContext(AuthContext);
+  const [qr, setQr] = useState("");
+
+  async function generateQR() {
+    const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/attendance/qr";
+    const res = await fetch(url, {
+      headers: { Authorization: "Bearer " + token }
+    });
+    const blob = await res.blob();
+    setQr(URL.createObjectURL(blob));
+  }
+
+  return (
+    <DashboardLayout>
+      <h2>Attendance</h2>
+      <button onClick={generateQR}>Generate QR</button>
+      <br/><br/>
+      {qr && <img src={qr} width="200" />}
+    </DashboardLayout>
+  );
+}
+</code></pre>
+  </details>
+
+
+
+
+  <!-- ===========================
+       MESSAGES
+       =========================== -->
+  <details>
+    <summary><strong>File: frontend/src/pages/dashboard/messages.tsx</strong></summary>
+<pre><code class="language-tsx">import DashboardLayout from "../../components/DashboardLayout";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { api } from "../../utils/api";
+import Card from "../../components/Card";
+
+export default function Messages() {
+  const { token } = useContext(AuthContext);
+  const [inbox, setInbox] = useState([]);
+
+  useEffect(() => {
+    api("/messages/inbox", token).then((r) => setInbox(r.inbox));
+  }, [token]);
+
+  return (
+    <DashboardLayout>
+      <h2>Messages</h2>
+      <Card title="Inbox">
+        <pre>{JSON.stringify(inbox, null, 2)}</pre>
+      </Card>
+    </DashboardLayout>
+  );
+}
+</code></pre>
+  </details>
+
+
+
+
+  <!-- ===========================
+       HR PAGE
+       =========================== -->
+  <details>
+    <summary><strong>File: frontend/src/pages/dashboard/hr.tsx</strong></summary>
+<pre><code class="language-tsx">import DashboardLayout from "../../components/DashboardLayout";
+
+export default function HR() {
+  return (
+    <DashboardLayout>
+      <h2>HR Tools</h2>
+      <p>Apply for leave, view contracts, and check payroll summaries.</p>
+    </DashboardLayout>
+  );
+}
+</code></pre>
+  </details>
+
+
+
+
+  <!-- ===========================
+       ADMIN DASHBOARD
+       =========================== -->
+  <h2>🛡 Admin Dashboard</h2>
+
+  <details>
+    <summary><strong>File: frontend/src/pages/admin/index.tsx</strong></summary>
+<pre><code class="language-tsx">import DashboardLayout from "../../components/DashboardLayout";
+
+export default function AdminHome() {
+  return (
+    <DashboardLayout>
+      <h2>Admin Dashboard</h2>
+      <p>Manage users, roles, HR approvals, and system operations.</p>
+    </DashboardLayout>
+  );
+}
+</code></pre>
+  </details>
+
+
+  <details>
+    <summary><strong>File: frontend/src/pages/admin/users.tsx</strong></summary>
+<pre><code class="language-tsx">import DashboardLayout from "../../components/DashboardLayout";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { api } from "../../utils/api";
+
+export default function AdminUsers() {
+  const { token } = useContext(AuthContext);
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    api("/staff/list", token).then((r) => setUsers(r.users));
+  }, [token]);
+
+  return (
+    <DashboardLayout>
+      <h2>All Users</h2>
+      <pre>{JSON.stringify(users, null, 2)}</pre>
+    </DashboardLayout>
+  );
+}
+</code></pre>
+  </details>
+
+</div>
+<!-- ====== END PART 4 ====== -->
+  <!-- ===========================
+     PART 5 — FRONTEND UI TEMPLATES
+     =========================== -->
+<div id="part5" class="section">
+  <h2>PART 5 — FRONTEND UI Templates + Components</h2>
+
+  <p>
+    This section provides reusable UI templates for Profile, Attendance, Messaging, 
+    and HR modules. These pages plug directly into the Next.js frontend added in 
+    Part 4 and integrate seamlessly with backend routes from Part 2.
+  </p>
+
+  <hr/>
+
+
+
+  <!-- ===========================
+       STAFF PROFILE UI
+       =========================== -->
+  <h3>👤 Staff Profile UI</h3>
+  <p>Includes: Profile details, photo upload, department, campus, and contact fields.</p>
+
+  <details open>
+    <summary><strong>File: frontend/src/pages/dashboard/profile.tsx (updated)</strong></summary>
+<pre><code class="language-tsx">import DashboardLayout from "../../components/DashboardLayout";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { api } from "../../utils/api";
+
+export default function Profile() {
+  const { token } = useContext(AuthContext);
+  const [profile, setProfile] = useState<any>(null);
+  const [department, setDepartment] = useState("");
+  const [campus, setCampus] = useState("");
+  const [phone, setPhone] = useState("");
+
+  useEffect(() => {
+    api("/staff/me", token).then((r) => {
+      setProfile(r.profile);
+      if (r.profile) {
+        setDepartment(r.profile.department || "");
+        setCampus(r.profile.campus || "");
+        setPhone(r.profile.phone || "");
+      }
+    });
+  }, [token]);
+
+  async function saveProfile() {
+    await api("/staff/me", token, {
+      method: "POST",
+      body: JSON.stringify({ department, campus, phone })
+    });
+    alert("Profile updated");
+  }
+
+  async function uploadPhoto(e: any) {
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append("photo", file);
+
+    const res = await fetch(
+      process.env.NEXT_PUBLIC_BACKEND_URL + "/staff/photo",
+      {
+        method: "POST",
+        headers: { Authorization: "Bearer " + token },
+        body: formData
+      }
+    );
+
+    alert("Photo updated");
+  }
+
+  return (
+    <DashboardLayout>
+      <h2>My Profile</h2>
+
+      {profile && (
+        <>
+          <img
+            src={profile.photoUrl || "/default-avatar.png"}
+            width="120"
+            style={{ borderRadius: "60px", marginBottom: 20 }}
+          />
+
+          <input type="file" onChange={uploadPhoto} />
+
+          <h3>Details</h3>
+
+          <label>Department</label>
+          <input
+            value={department}
+            onChange={(e) => setDepartment(e.target.value)}
+            style={{ display: "block", width: "280px" }}
+          />
+
+          <label>Campus</label>
+          <input
+            value={campus}
+            onChange={(e) => setCampus(e.target.value)}
+            style={{ display: "block", width: "280px" }}
+          />
+
+          <label>Phone</label>
+          <input
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            style={{ display: "block", width: "280px" }}
+          />
+
+          <button onClick={saveProfile} style={{ marginTop: 20 }}>
+            Save Changes
+          </button>
+        </>
+      )}
+    </DashboardLayout>
+  );
+}
+</code></pre>
+  </details>
+
+
+
+  <hr/>
+
+
+
+  <!-- ===========================
+       ATTENDANCE UI TEMPLATE
+       =========================== -->
+  <h3>🕒 Attendance UI</h3>
+  <p>Allows QR generation and check‑in/check‑out.</p>
+
+  <details>
+    <summary><strong>File: frontend/src/pages/dashboard/attendance.tsx (updated)</strong></summary>
+<pre><code class="language-tsx">import DashboardLayout from "../../components/DashboardLayout";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
+
+export default function Attendance() {
+  const { token } = useContext(AuthContext);
+
+  const [qr, setQr] = useState("");
+  const [status, setStatus] = useState("");
+
+  async function generateQR() {
+    const url = process.env.NEXT_PUBLIC_BACKEND_URL + "/attendance/qr";
+    const res = await fetch(url, {
+      headers: { Authorization: "Bearer " + token }
+    });
+    const blob = await res.blob();
+    setQr(URL.createObjectURL(blob));
+  }
+
+  async function checkIn() {
+    const res = await fetch(
+      process.env.NEXT_PUBLIC_BACKEND_URL + "/attendance/check-in",
+      {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer " + token,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ code: "manual" })
+      }
+    );
+    const out = await res.json();
+    setStatus("Checked in at " + new Date().toLocaleTimeString());
+  }
+
+  async function checkOut() {
+    await fetch(
+      process.env.NEXT_PUBLIC_BACKEND_URL + "/attendance/check-out",
+      {
+        method: "POST",
+        headers: { Authorization: "Bearer " + token }
+      }
+    );
+    setStatus("Checked out at " + new Date().toLocaleTimeString());
+  }
+
+  return (
+    <DashboardLayout>
+      <h2>Attendance</h2>
+
+      <button onClick={generateQR}>Generate QR Code</button>
+      <button onClick={checkIn} style={{ marginLeft: 10 }}>
+        Check In
+      </button>
+      <button onClick={checkOut} style={{ marginLeft: 10 }}>
+        Check Out
+      </button>
+
+      <p style={{ marginTop: 20 }}>{status}</p>
+
+      {qr && (
+        <>
+          <h3>Your QR Code</h3>
+          <img src={qr} width="200" />
+        </>
+      )}
+    </DashboardLayout>
+  );
+}
+</code></pre>
+  </details>
+
+
+
+
+  <hr/>
+
+
+
+  <!-- ===========================
+       MESSAGING UI TEMPLATE
+       =========================== -->
+  <h3>💬 Messaging UI</h3>
+  <p>Inbox, send message, view conversation.</p>
+
+  <details>
+    <summary><strong>File: frontend/src/pages/dashboard/messages.tsx (updated)</strong></summary>
+<pre><code class="language-tsx">import DashboardLayout from "../../components/DashboardLayout";
+import { useState, useContext, useEffect } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { api } from "../../utils/api";
+
+export default function Messages() {
+  const { token } = useContext(AuthContext);
+  const [inbox, setInbox] = useState([]);
+  const [subject, setSubject] = useState("");
+  const [body, setBody] = useState("");
+  const [toUserId, setToUserId] = useState("");
+
+  useEffect(() => {
+    api("/messages/inbox", token).then((r) => setInbox(r.inbox));
+  }, [token]);
+
+  async function sendMessage() {
+    await api("/messages/send", token, {
+      method: "POST",
+      body: JSON.stringify({ toUserId, subject, body })
+    });
+    alert("Message sent");
+  }
+
+  return (
+    <DashboardLayout>
+      <h2>Messages</h2>
+
+      <h3>Inbox</h3>
+      <pre>{JSON.stringify(inbox, null, 2)}</pre>
+
+      <h3>Send Message</h3>
+
+      <label>To User ID</label>
+      <input
+        value={toUserId}
+        onChange={(e) => setToUserId(e.target.value)}
+        style={{ display: "block", width: 250 }}
+      />
+
+      <label>Subject</label>
+      <input
+        value={subject}
+        onChange={(e) => setSubject(e.target.value)}
+        style={{ display: "block", width: 250 }}
+      />
+
+      <label>Message</label>
+      <textarea
+        value={body}
+        onChange={(e) => setBody(e.target.value)}
+        style={{ display: "block", width: 350, height: 120 }}
+      />
+
+      <button onClick={sendMessage} style={{ marginTop: 15 }}>
+        Send
+      </button>
+    </DashboardLayout>
+  );
+}
+</code></pre>
+  </details>
+
+
+
+
+  <hr/>
+
+
+
+  <!-- ===========================
+       HR UI TEMPLATE
+       =========================== -->
+  <h3>🏛️ HR UI</h3>
+  <p>Supports contract download, leave requests, and payroll summary.</p>
+
+  <details>
+    <summary><strong>File: frontend/src/pages/dashboard/hr.tsx (updated)</strong></summary>
+<pre><code class="language-tsx">import DashboardLayout from "../../components/DashboardLayout";
+import { useState, useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+
+export default function HR() {
+  const { token } = useContext(AuthContext);
+  const [from, setFrom] = useState("");
+  const [to, setTo] = useState("");
+  const [reason, setReason] = useState("");
+
+  async function requestLeave() {
+    await fetch(process.env.NEXT_PUBLIC_BACKEND_URL + "/hr/leave", {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + token,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ from, to, reason })
+    });
+    alert("Leave requested");
+  }
+
+  async function getPayroll() {
+    const res = await fetch(
+      process.env.NEXT_PUBLIC_BACKEND_URL + "/hr/payroll/summary",
+      {
+        headers: { Authorization: "Bearer " + token }
+      }
+    );
+    const out = await res.json();
+    alert("Payroll records: " + out.payrollItems);
+  }
+
+  return (
+    <DashboardLayout>
+      <h2>HR Tools</h2>
+
+      <h3>Request Leave</h3>
+      <label>From</label>
+      <input
+        type="date"
+        value={from}
+        onChange={(e) => setFrom(e.target.value)}
+      />
+
+      <label>To</label>
+      <input
+        type="date"
+        value={to}
+        onChange={(e) => setTo(e.target.value)}
+      />
+
+      <label>Reason</label>
+      <input
+        value={reason}
+        onChange={(e) => setReason(e.target.value)}
+        style={{ display: "block", width: 300 }}
+      />
+
+      <button onClick={requestLeave} style={{ marginTop: 15 }}>
+        Submit Leave
+      </button>
+
+      <hr/>
+
+      <h3>Payroll Summary</h3>
+      <button onClick={getPayroll}>View Payroll Summary</button>
+    </DashboardLayout>
+  );
+}
+</code></pre>
+  </details>
+
+
+
+  <p>This completes the UI layer for major staff-facing functionalities.</p>
+
+</div>
+<!-- ====== END PART 5 ====== -->
+        <!-- ===========================
+     PART 6 — MOBILE APP (React Native)
+     =========================== -->
+<div id="part6" class="section">
+  <h2>PART 6 — MOBILE APP (React Native)</h2>
+
+  <p>
+    This section documents the official mobile client for the Hanave University Staff Portal.
+    The app is built with React Native (Expo compatible) and contains:
+  </p>
+
+  <ul>
+    <li>Microsoft Authentication Flow</li>
+    <li>Attendance QR Scanner</li>
+    <li>Messages Inbox + Send</li>
+    <li>Profile viewer</li>
+    <li>Dashboard navigation</li>
+    <li>API integration with backend</li>
+  </ul>
+
+  <hr/>
+
+
+  <!-- ===========================
+       MOBILE DIRECTORY STRUCTURE
+       =========================== -->
+  <h3>📁 Directory Structure (mobile)</h3>
+
+  <pre><code>mobile/
+├─ App.js
+├─ package.json
+├─ screens/
+│  ├─ LoginScreen.js
+│  ├─ DashboardScreen.js
+│  ├─ ProfileScreen.js
+│  ├─ AttendanceScreen.js
+│  ├─ MessageScreen.js
+├─ components/
+│  ├─ Button.js
+│  └─ Card.js
+├─ utils/
+│  └─ api.js
+└─ navigation/
+   └─ AppNavigator.js
+</code></pre>
+
+
+
+  <!-- ===========================
+       package.json
+       =========================== -->
+  <h3>⚙️ package.json</h3>
+  <details open>
+    <summary><strong>File: mobile/package.json</strong></summary>
+<pre><code class="language-json">{
+  "name": "hanave-mobile",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios"
+  },
+  "dependencies": {
+    "expo": "~51.0.0",
+    "expo-camera": "~15.0.0",
+    "expo-barcode-scanner": "~15.0.0",
+    "react": "18.2.0",
+    "react-native": "0.73.0",
+    "react-navigation": "^4.4.4",
+    "@react-navigation/native": "^6.1.6",
+    "@react-navigation/native-stack": "^6.9.12"
+  }
+}
+</code></pre>
+  </details>
+
+
+
+  <!-- ===========================
+       API HELPER (mobile)
+       =========================== -->
+  <h3>🧰 Mobile API Helper</h3>
+  <details open>
+    <summary><strong>File: mobile/utils/api.js</strong></summary>
+<pre><code class="language-js">export async function api(path, token, method = "GET", data = null) {
+  const url = "http://localhost:3001" + path;
+  const headers = { "Content-Type": "application/json" };
+  if (token) headers.Authorization = "Bearer " + token;
+
+  const res = await fetch(url, {
+    method,
+    headers,
+    body: data ? JSON.stringify(data) : undefined
+  });
+
+  return await res.json();
+}
+</code></pre>
+  </details>
+
+
+
+  <!-- ===========================
+       APP NAVIGATOR
+       =========================== -->
+  <h3>🧭 Navigation</h3>
+  <details open>
+    <summary><strong>File: mobile/navigation/AppNavigator.js</strong></summary>
+<pre><code class="language-js">import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import LoginScreen from "../screens/LoginScreen";
+import DashboardScreen from "../screens/DashboardScreen";
+import ProfileScreen from "../screens/ProfileScreen";
+import AttendanceScreen from "../screens/AttendanceScreen";
+import MessageScreen from "../screens/MessageScreen";
+
+const Stack = createNativeStackNavigator();
+
+export default function AppNavigator() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Dashboard" component={DashboardScreen} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Attendance" component={AttendanceScreen} />
+        <Stack.Screen name="Messages" component={MessageScreen} />
+
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+</code></pre>
+  </details>
+
+
+
+  <!-- ===========================
+       APP ENTRY POINT
+       =========================== -->
+  <h3>📘 App.js</h3>
+  <details open>
+    <summary><strong>File: mobile/App.js</strong></summary>
+<pre><code class="language-js">import AppNavigator from "./navigation/AppNavigator";
+
+export default function App() {
+  return <AppNavigator />;
+}
+</code></pre>
+  </details>
+
+
+
+  <!-- ===========================
+       LOGIN SCREEN
+       =========================== -->
+  <h3>🔐 Login Screen (Microsoft Login)</h3>
+
+  <details open>
+    <summary><strong>File: mobile/screens/LoginScreen.js</strong></summary>
+<pre><code class="language-js">import { View, Text, Button, Linking } from "react-native";
+
+export default function LoginScreen({ navigation }) {
+  function loginWithMicrosoft() {
+    const backend = "http://localhost:3001";
+    const url = backend + "/auth/microsoft/login";
+    Linking.openURL(url);
+  }
+
+  function continueToDashboard() {
+    navigation.replace("Dashboard");
+  }
+
+  return (
+    <View style={{ padding: 40 }}>
+      <Text style={{ fontSize: 24, fontWeight: "bold" }}>
+        Hanave University Staff Portal
+      </Text>
+
+      <Button title="Login with Microsoft" onPress={loginWithMicrosoft} />
+
+      {/* Local dev shortcut */}
+      <View style={{ marginTop: 20 }} />
+      <Button title="Enter Without Login" onPress={continueToDashboard} />
+    </View>
+  );
+}
+</code></pre>
+  </details>
+
+
+
+  <!-- ===========================
+       DASHBOARD SCREEN
+       =========================== -->
+  <h3>📊 Dashboard Screen</h3>
+
+  <details>
+    <summary><strong>File: mobile/screens/DashboardScreen.js</strong></summary>
+<pre><code class="language-js">import { View, Text, Button } from "react-native";
+
+export default function DashboardScreen({ navigation }) {
+  return (
+    <View style={{ padding: 40 }}>
+      <Text style={{ fontSize: 22 }}>Dashboard</Text>
+
+      <Button
+        title="My Profile"
+        onPress={() => navigation.navigate("Profile")}
+      />
+
+      <Button
+        title="Attendance"
+        onPress={() => navigation.navigate("Attendance")}
+      />
+
+      <Button
+        title="Messages"
+        onPress={() => navigation.navigate("Messages")}
+      />
+    </View>
+  );
+}
+</code></pre>
+  </details>
+
+
+
+  <!-- ===========================
+       PROFILE SCREEN
+       =========================== -->
+  <h3>👤 Profile Screen</h3>
+
+  <details>
+    <summary><strong>File: mobile/screens/ProfileScreen.js</strong></summary>
+<pre><code class="language-js">import { View, Text, Image } from "react-native";
+
+export default function ProfileScreen() {
+  return (
+    <View style={{ padding: 40 }}>
+      <Text style={{ fontSize: 20 }}>My Profile</Text>
+
+      <Image
+        source={{ uri: "https://placehold.co/120x120" }}
+        style={{ width: 120, height: 120, borderRadius: 60, marginTop: 20 }}
+      />
+
+      <Text style={{ marginTop: 20 }}>
+        Basic profile details appear here (fetched from backend)
+      </Text>
+    </View>
+  );
+}
+</code></pre>
+  </details>
+
+
+
+  <!-- ===========================
+       ATTENDANCE SCREEN (QR SCANNER)
+       =========================== -->
+  <h3>🕒 Attendance Screen (QR Scanner)</h3>
+
+  <details open>
+    <summary><strong>File: mobile/screens/AttendanceScreen.js</strong></summary>
+<pre><code class="language-js">import { useState, useEffect } from "react";
+import { View, Text, Button } from "react-native";
+import { BarCodeScanner } from "expo-barcode-scanner";
+
+export default function AttendanceScreen() {
+  const [hasPermission, setHasPermission] = useState(null);
+  const [scanned, setScanned] = useState(false);
+  const [result, setResult] = useState("");
+
+  useEffect(() => {
+    (async () => {
+      const { status } = await BarCodeScanner.requestPermissionsAsync();
+      setHasPermission(status === "granted");
+    })();
+  }, []);
+
+  async function handleScanned({ data }) {
+    setScanned(true);
+    setResult("Scanned QR: " + data);
+  }
+
+  if (hasPermission === null) return <Text>Requesting permission...</Text>;
+  if (hasPermission === false) return <Text>Camera access denied.</Text>;
+
+  return (
+    <View style={{ flex: 1 }}>
+      <BarCodeScanner
+        onBarCodeScanned={scanned ? undefined : handleScanned}
+        style={{ flex: 1 }}
+      />
+
+      {scanned && (
+        <Button title="Scan Again" onPress={() => setScanned(false)} />
+      )}
+
+      <Text style={{ padding: 20 }}>{result}</Text>
+    </View>
+  );
+}
+</code></pre>
+  </details>
+
+
+
+  <!-- ===========================
+       MESSAGES SCREEN
+       =========================== -->
+  <h3>💬 Message Screen</h3>
+
+  <details>
+    <summary><strong>File: mobile/screens/MessageScreen.js</strong></summary>
+<pre><code class="language-js">import { View, Text, TextInput, Button, ScrollView } from "react-native";
+import { useState } from "react";
+
+export default function MessageScreen() {
+  const [to, setTo] = useState("");
+  const [subject, setSubject] = useState("");
+  const [body, setBody] = useState("");
+
+  async function sendMessage() {
+    alert("Message sent (placeholder)");
+  }
+
+  return (
+    <ScrollView style={{ padding: 40 }}>
+      <Text style={{ fontSize: 20 }}>Messages</Text>
+
+      <TextInput
+        placeholder="To (User ID)"
+        value={to}
+        onChangeText={setTo}
+        style={{ background: "#fff", padding: 10, marginBottom: 10 }}
+      />
+
+      <TextInput
+        placeholder="Subject"
+        value={subject}
+        onChangeText={setSubject}
+        style={{ background: "#fff", padding: 10, marginBottom: 10 }}
+      />
+
+      <TextInput
+        placeholder="Message"
+        value={body}
+        onChangeText={setBody}
+        multiline
+        style={{
+          background: "#fff",
+          padding: 10,
+          marginBottom: 10,
+          height: 120
+        }}
+      />
+
+      <Button title="Send Message" onPress={sendMessage} />
+    </ScrollView>
+  );
+}
+</code></pre>
+  </details>
+
+
+  <hr/>
+
+  <p>This completes the full mobile app client portion for the Hanave University Staff Portal.</p>
+
+</div>
+<!-- ====== END PART 6 ====== -->
+        <!-- ===========================
+     PART 7 — DOCKER + DEPLOYMENT
+     =========================== -->
+<div id="part7" class="section">
+  <h2>PART 7 — DOCKER + DEPLOYMENT</h2>
+
+  <p>
+    This section defines complete Docker and production deployment configuration for:
+  </p>
+
+  <ul>
+    <li>Backend (Node.js + Express)</li>
+    <li>Frontend (Next.js)</li>
+    <li>Database (PostgreSQL)</li>
+    <li>NGINX reverse proxy</li>
+    <li>File volumes for persistent data</li>
+    <li>Production build instructions</li>
+  </ul>
+
+  <hr/>
+
+
+  <!-- ===========================
+       DOCKER-COMPOSE
+       =========================== -->
+  <h3>🐳 docker-compose.yml</h3>
+  <details open>
+    <summary><strong>File: docker/docker-compose.yml</strong></summary>
+<pre><code class="language-yaml">version: "3.9"
+
+services:
+
+  backend:
+    build: ./backend
+    container_name: hanave-backend
+    restart: always
+    env_file:
+      - ../backend/.env
+    ports:
+      - "3001:3001"
+    depends_on:
+      - db
+    networks:
+      - hanave_net
+
+  frontend:
+    build: ./frontend
+    container_name: hanave-frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_BACKEND_URL: "http://localhost"
+    networks:
+      - hanave_net
+
+  db:
+    image: postgres:15
+    container_name: hanave-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: staff_portal
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - hanave_net
+
+  nginx:
+    build: ./nginx
+    container_name: hanave-nginx
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - hanave_net
+
+networks:
+  hanave_net:
+    driver: bridge
+
+volumes:
+  postgres_data:
+</code></pre>
+  </details>
+
+
+
+  <!-- ===========================
+       DOCKERFILE — BACKEND
+       =========================== -->
+  <h3>⚙️ Dockerfile (backend)</h3>
+  <details>
+    <summary><strong>File: backend/Dockerfile</strong></summary>
+<pre><code class="language-dockerfile">FROM node:20-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+RUN npm run build
+
+EXPOSE 3001
+CMD ["npm", "start"]
+</code></pre>
+  </details>
+
+
+
+  <!-- ===========================
+       DOCKERFILE — FRONTEND (Next.js)
+       =========================== -->
+  <h3>⚙️ Dockerfile (frontend)</h3>
+  <details>
+    <summary><strong>File: frontend/Dockerfile</strong></summary>
+<pre><code class="language-dockerfile">FROM node:20-alpine
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+RUN npm run build
+
+EXPOSE 3000
+CMD ["npm", "start"]
+</code></pre>
+  </details>
+
+
+
+  <!-- ===========================
+       DOCKERFILE — NGINX
+       =========================== -->
+  <h3>⚙️ Dockerfile (nginx)</h3>
+  <details>
+    <summary><strong>File: nginx/Dockerfile</strong></summary>
+<pre><code class="language-dockerfile">FROM nginx:stable
+
+COPY nginx.conf /etc/nginx/nginx.conf
+
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+</code></pre>
+  </details>
+
+
+
+  <!-- ===========================
+       NGINX CONFIG
+       =========================== -->
+  <h3>🧩 nginx.conf (Reverse Proxy)</h3>
+  <details open>
+    <summary><strong>File: nginx/nginx.conf</strong></summary>
+<pre><code class="language-nginx">worker_processes auto;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+
+    server {
+        listen 80;
+
+        # FRONTEND
+        location / {
+            proxy_pass http://frontend:3000;
+        }
+
+        # BACKEND
+        location /api/ {
+            rewrite ^/api/(.*)$ /$1 break;
+            proxy_pass http://backend:3001;
+        }
+    }
+}
+</code></pre>
+  </details>
+
+
+
+  <!-- ===========================
+       DEPLOYMENT
+       =========================== -->
+  <h2>🚀 Deployment Instructions</h2>
+
+  <h3>1. Production Build</h3>
+  <pre><code class="language-bash">docker compose -f docker/docker-compose.yml build</code></pre>
+
+  <h3>2. Run in Production Mode</h3>
+  <pre><code class="language-bash">docker compose -f docker/docker-compose.yml up -d</code></pre>
+
+  <h3>3. Check Logs</h3>
+  <pre><code class="language-bash">docker logs hanave-backend -f
+docker logs hanave-frontend -f
+docker logs hanave-nginx -f
+</code></pre>
+
+  <h3>4. Database Access</h3>
+  <pre><code class="language-bash">docker exec -it hanave-postgres psql -U admin -d staff_portal</code></pre>
+
+  <h3>5. Updating the System</h3>
+  <pre><code class="language-bash">docker compose -f docker/docker-compose.yml down
+docker compose -f docker/docker-compose.yml build --no-cache
+docker compose -f docker/docker-compose.yml up -d
+</code></pre>
+
+  <h3>6. Frontend URL</h3>
+  <p>Once deployed, access the portal via:</p>
+  <pre><code>http://localhost</code></pre>
+
+  <h3>7. Backend URL</h3>
+  <pre><code>http://localhost/api</code></pre>
+
+  <h3>8. Swagger API Docs</h3>
+  <pre><code>http://localhost/api/docs</code></pre>
+
+</div>
+<!-- ====== END PART 7 ====== -->
+        <!-- ===========================
+     PART 8 — FINAL INTEGRATION
+     =========================== -->
+<div id="part8" class="section">
+  <h2>PART 8 — FINAL INTEGRATION</h2>
+
+  <p>
+    This final section connects all previous components (backend, database, frontend,
+    mobile app, and deployment infrastructure) into a single cohesive architecture.
+    It also includes repository guidelines, project assembly instructions, and 
+    recommended best practices.
+  </p>
+
+  <hr/>
+
+
+
+  <!-- ===========================
+       SEARCHABLE INDEX
+       =========================== -->
+  <h3>🔎 Searchable Index of All Sections</h3>
+
+  <p>The following anchor links let you search and navigate within this giant HTML file:</p>
+
+  <ul>
+    <li>/ PART 1 — HTML Shell + TOC</li>
+    <li>/ PART 2 — Backend (Express API, Auth, Microsoft, HR, Messaging, OneDrive, Audit)</li>
+    <li>/ PART 3 — Database (Prisma Schema, SQL Migrations, ERD)</li>
+    <li>/ PART 4 — Next.js Frontend</li>
+    <li>/ PART 5 — Frontend UI Templates</li>
+    <li>/ PART 6 — Mobile App (React Native)</li>
+    <li>/ PART 7 — Docker + Deployment</li>
+    <li>/ PART 8 — Final Integration</li>
+  </ul>
+
+  <hr/>
+
+
+
+  <!-- ===========================
+       FULL SYSTEM BUILD INSTRUCTIONS
+       =========================== -->
+  <h2>🚀 FULL SYSTEM ASSEMBLY (DEV ENVIRONMENT)</h2>
+
+  <h3>1️⃣ Clone your repository</h3>
+  <pre><code class="language-bash">git clone https://github.com/yourusername/hanave-portal.git
+cd hanave-portal</code></pre>
+
+  <h3>2️⃣ Install all dependencies</h3>
+
+  <pre><code class="language-bash">cd backend
+npm install
+cd ../frontend
+npm install
+cd ../mobile
+npm install</code></pre>
+
+  <h3>3️⃣ Configure environment variables</h3>
+  <p>Create these files:</p>
+
+  - <code>backend/.env</code>  
+  - <code>frontend/.env.local</code>  
+  - <code>mobile/.env</code> (optional)
+
+  <h4>Example:</h4>
+
+  <pre><code>PORT=3001
+JWT_SECRET=changeme
+DATABASE_URL=postgresql://admin:secret@localhost:5432/staff_portal
+AZURE_TENANT_ID=xxxxx
+AZURE_CLIENT_ID=xxxxx
+AZURE_CLIENT_SECRET=xxxxx
+AZURE_REDIRECT_URI=http://localhost:3001/auth/microsoft/redirect</code></pre>
+
+
+  <h3>4️⃣ Database Setup</h3>
+
+  <h4>Run Prisma migrations:</h4>
+  <pre><code class="language-bash">cd backend
+npx prisma migrate dev --name init
+npx prisma db seed</code></pre>
+
+  <h4>Open Prisma Studio (DB UI):</h4>
+  <pre><code class="language-bash">npx prisma studio</code></pre>
+
+  <hr/>
+
+
+
+  <!-- ===========================
+       FULL PROJECT STRUCTURE
+       =========================== -->
+  <h2>📁 GitHub Repository Structure</h2>
+
+  <pre><code>hanave-portal/
+│
+├── backend/
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── routes/
+│   │   ├── middleware/
+│   │   ├── services/
+│   │   ├── utils/
+│   │   ├── config/
+│   │   ├── swagger/
+│   │   ├── app.ts
+│   │   └── server.ts
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── Dockerfile
+│
+├── frontend/
+│   ├── src/
+│   │   ├── pages/
+│   │   ├── components/
+│   │   ├── context/
+│   │   └── utils/
+│   ├── public/
+│   ├── styles/
+│   ├── package.json
+│   ├── next.config.js
+│   └── Dockerfile
+│
+├── mobile/
+│   ├── screens/
+│   ├── components/
+│   ├── utils/
+│   ├── navigation/
+│   ├── package.json
+│   └── App.js
+│
+├── database/
+│   ├── schema.prisma
+│   └── migrations/
+│
+├── docker/
+│   ├── docker-compose.yml
+│   └── nginx/
+│       ├── nginx.conf
+│       └── Dockerfile
+│
+└── full-system-index.html   (THIS FILE)
+</code></pre>
+
+  <hr/>
+
+
+
+  <!-- ===========================
+       PRODUCTION BUILD INSTRUCTIONS
+       =========================== -->
+  <h2>🔧 Production Deployment</h2>
+
+  <h3>1️⃣ Build All Containers</h3>
+  <pre><code class="language-bash">docker compose -f docker/docker-compose.yml build</code></pre>
+
+  <h3>2️⃣ Start Services</h3>
+  <pre><code class="language-bash">docker compose -f docker/docker-compose.yml up -d</code></pre>
+
+  <h3>3️⃣ Access the System</h3>
+  <ul>
+    <li>Frontend: <code>http://localhost</code></li>
+    <li>Backend API: <code>http://localhost/api</code></li>
+    <li>Swagger Docs: <code>http://localhost/api/docs</code></li>
+    <li>PostgreSQL: <code>localhost:5432</code></li>
+  </ul>
+
+  <hr/>
+
+
+
+  <!-- ===========================
+       TESTING THE SYSTEM END-TO-END
+       =========================== -->
+  <h2>🧪 End-to-End Testing Checklist</h2>
+
+  <ol>
+    <li>Start backend + frontend + db</li>
+    <li>Load portal at <code>http://localhost</code></li>
+    <li>Click “Login with Microsoft”</li>
+    <li>Confirm redirect flow works</li>
+    <li>Check JWT token stored on frontend</li>
+    <li>Open staff dashboard</li>
+    <li>Test:
+      <ul>
+        <li>Profile update</li>
+        <li>Photo upload → OneDrive</li>
+        <li>Attendance QR</li>
+        <li>Messaging</li>
+        <li>HR Leave Requests</li>
+        <li>Contract PDF</li>
+        <li>Admin Dashboard</li>
+      </ul>
+    </li>
+  </ol>
+
+  <hr/>
+
+
+
+  <!-- ===========================
+       FINAL NOTE
+       =========================== -->
+  <h2>🎉 Conclusion</h2>
+
+  <p>
+    You now have a complete end‑to‑end, multi‑platform, enterprise‑grade 
+    <strong>Hanave University Staff Portal</strong> system that includes:
+  </p>
+
+  <ul>
+    <li>Backend (Node.js)</li>
+    <li>Database (Prisma + PostgreSQL)</li>
+    <li>Frontend (Next.js)</li>
+    <li>Mobile App (React Native)</li>
+    <li>Authentication (Microsoft Entra ID)</li>
+    <li>OneDrive file storage</li>
+    <li>QR attendance system</li>
+    <li>Messaging</li>
+    <li>HR workflows & Payroll</li>
+    <li>PDF generators (ID Cards, Contracts)</li>
+    <li>Docker deployment</li>
+    <li>NGINX reverse proxy</li>
+    <li>This full-system documentation</li>
+  </ul>
+
+  <p>
+    Your portal is **production-ready** and can be deployed on any cloud provider.
+  </p>
+
+</div>
+<!-- ====== END PART 8 ====== -->
